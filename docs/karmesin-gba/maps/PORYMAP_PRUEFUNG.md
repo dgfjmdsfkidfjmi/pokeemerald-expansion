@@ -51,6 +51,7 @@ Legende: G = Gras, F = Blumen-/Akzentgras, S = Sand, P = Erdweg, U = Ufer, W = W
 - `metatiles.bin`: 256 Byte = 16 Metatiles × 8 16-Bit-Einträge.
 - Jeder verwendete Grafik-Tile-Verweis liegt im Bereich 0–257 und damit innerhalb der 272 vorhandenen Grafik-Tiles.
 - Alle Metatile-Einträge verwenden Palettenbank 6.
+- Die 16 Palettendateien im Engine-Verzeichnis haben derzeit identischen Inhalt; eigenständige alternative Farbpaletten sind noch nicht erstellt.
 - Tile-IDs 256 und 257 stammen aus der transparent angelegten zusätzlichen Atlaszeile und werden als leere obere Ebene verwendet.
 
 ## Attribute und Kollision
