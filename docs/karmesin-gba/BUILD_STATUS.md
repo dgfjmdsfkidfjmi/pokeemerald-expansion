@@ -25,7 +25,7 @@ Ein privates, deutschsprachiges Pokémon-Karmesin-inspiriertes GBA-Spiel auf Bas
 ## Was ausdrücklich noch NICHT fertig ist
 - Das Tileset ist registriert, aber noch nicht mit Porymap oder einem ROM-Build validiert.
 - Das aktuelle 32×18-Layout ist ein erster Terrain-Testaufbau, noch kein fertiges Dorf mit Häusern, Klippen, Palmen und individuellen Dekorationen.
-- Die Metatile-Attribute stehen noch alle auf 0; Wasser, Felsen und Dekorationen besitzen daher noch keine korrekte Kollision.
+- Metatile-Attribute nutzen jetzt `MB_TALL_GRASS` für das Gras-/Blumen-Metatile, `MB_SAND` für Sand/Ufer und `MB_OCEAN_WATER` für Wasser. 19 Kartenfelder mit Fels-/Busch-Metatiles haben zusätzlich die Mapgrid-Kollisionsbits gesetzt. Diese Werte sind noch nicht im Spiel getestet.
 - Ein individuelles Nemila-Sprite fehlt.
 - Spielerhaus, Cucharico-Pfad, Inlet-Grotte, Pratolido und Mesalona City sind noch keine verbundenen spielbaren Karten.
 - Cucharico verwendet vorläufige Hoenn-Regions-/Kartenabschnittswerte und Littleroot-Musik.
@@ -49,4 +49,4 @@ Eine Änderung gilt erst dann als spielbar, wenn die relevanten Daten generiert,
 
 ## Grafik – Cucharico
 
-Die Tileset-Spezifikation und Produktionsreihenfolge stehen in [TILESET_CUCHARICO.md](graphics/TILESET_CUCHARICO.md). Der indizierte 128×136-Grafik-Atlas, 16 Metatiles, 16 Attribute und alle 16 Palettenbänke liegen unter `data/tilesets/secondary/cucharico/`. Das Tileset ist in den Engine-Datendateien registriert und dem Cucharico-Layout zugewiesen. Die 32×18-Testkarte verwendet sekundäre Metatile-IDs ab 512 (General enthält 512 Metatiles). Alle Attribute sind vorläufig normal/begehbar. Porymap-, Build- und Emulator-Test fehlen.
+Die Tileset-Spezifikation und Produktionsreihenfolge stehen in [TILESET_CUCHARICO.md](graphics/TILESET_CUCHARICO.md). Der indizierte 128×136-Grafik-Atlas, 16 Metatiles, 16 Attribute und alle 16 Palettenbänke liegen unter `data/tilesets/secondary/cucharico/`. Das Tileset ist in den Engine-Datendateien registriert und dem Cucharico-Layout zugewiesen. Die 32×18-Testkarte verwendet sekundäre Metatile-IDs ab 512 (General enthält 512 Metatiles). Die Terrain-Attribute sind teilweise gesetzt (Gras, Sand/Ufer, Wasser); 19 Fels-/Busch-Felder sind als blockierend markiert. Porymap-, Build- und Emulator-Test fehlen.
