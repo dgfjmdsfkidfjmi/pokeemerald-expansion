@@ -106,11 +106,27 @@ in Porymap getestet werden kann.
 6. Die Dateien werden vom Projekt-Build ohne Format- oder Palettenfehler
    verarbeitet.
 
+## Erster Grafik-Prototyp (eingetragen)
+
+Datei: `graphics/tilesets/cucharico/tiles.png`
+
+- PNG mit indizierter 4bpp-Farbgebung und 16 Einträgen in der Palette
+- 128×128 Pixel, also ein Raster von 16×16 Grafik-Tiles à 8×8 Pixel
+- Enthält einen ersten Terrain-Farb- und Muster-Prototyp für Gras, Sand,
+  Wasser, Ufer, Wege/Felsen und Akzentfarben
+- Transparenz ist über den ersten Paletteneintrag vorgesehen
+
+Dies ist ein **erster technischer Platzhalter-Prototyp**, kein fertiges
+Art-Pack: Die einzelnen Kachelmotive müssen visuell nachgearbeitet und
+in Porymap geprüft werden. Insbesondere sind noch keine Metatiles,
+Kollisionsattribute oder Engine-Registrierung vorhanden. Das Bild wurde
+als separate Quelldatei abgelegt und ersetzt keine bestehenden Tilesets.
+
 ## Status
 
 - [x] Stil- und Motivkonzept erstellt
 - [x] Engine-Verzeichnisstruktur anhand vorhandener Tilesets geprüft
-- [ ] Pixelgenaue 8×8-Grafik-Tiles erstellt
+- [x] Erster indizierter 8×8-Grafik-Prototyp erstellt (Nacharbeit offen)
 - [ ] GBA-Paletten erstellt und geprüft
 - [ ] Metatiles und Attribute erstellt
 - [ ] Tileset in der Engine registriert
