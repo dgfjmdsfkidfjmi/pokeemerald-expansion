@@ -16,3 +16,10 @@ Cucharico_Text_VillageSign:
 Cucharico_Text_BeachSign:
 	.string "BEACH\n"
 	.string "Please keep the coast clean.$"
+
+Cucharico_EventScript_Nemila::
+	msgbox Cucharico_Text_Nemila, MSGBOX_NPC
+	end
+
+Cucharico_Text_Nemila:
+	.string "Hey! Du bist also auch hier!$"
