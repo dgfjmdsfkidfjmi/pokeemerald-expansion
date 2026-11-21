@@ -41,20 +41,25 @@ Grafik-Vorschau-Zuordnung, noch keine direkt ladbare Engine-Metatile-Datei.
 | Wand A | 208, 209, 224, 225 | helle Hauswand |
 | Zaun A | 224, 225, 240, 241 | Dekoration |
 
-## Palette
+## Palette und Binärdateien
 
-Die zugehörige JASC-Palette liegt in `graphics/tilesets/cucharico/palettes/00.pal`.
+Die Secondary-Palette liegt unter `data/tilesets/secondary/cucharico/palettes/06.pal`.
 Sie enthält 16 Einträge und entspricht der indizierten PNG-Palette.
+
+Der erste Binär-Prototyp besteht aus:
+- `metatiles.bin`: 16 × 8 × 2 Byte = 256 Byte.
+- `metatile_attributes.bin`: 16 × 2 Byte = 32 Byte.
+- Pro Metatile folgen auf vier Tile-Einträge der unteren Ebene vier der oberen Ebene.
+- Die oberen Einträge verweisen auf die transparente Tile-ID 256.
+- Alle Attribute stehen vorläufig auf 0; dadurch sind auch Wasser und Hindernisse
+  noch nicht korrekt gesperrt.
 
 ## Noch offene Engine-Arbeit
 
-- Die Engine-Konstante `NUM_TILES_PER_METATILE` ist in diesem Projekt 8.
-  Deshalb darf die obige 4-Quadranten-Vorschau nicht ungeprüft als
-  `metatiles.bin` geschrieben werden.
-- Das genaue 8-Einträge-Metatile-Layout und die Attribut-Bitfelder müssen
-  anhand eines passenden Porymap-/Engine-Exports verifiziert werden.
-- Danach werden echte `metatiles.bin`, `metatile_attributes.bin`,
-  Tileset-Registrierung und eine Testmap erstellt.
-- Kollision, Ebenenverhalten und Wasserübergänge sind noch nicht getestet.
+- Tileset-C-Arrays und Pointer registrieren.
+- Cucharico als Secondary-Tileset in einem Map-Layout eintragen.
+- Attributwerte für Wasser, Felsen, Wände, Zäune und Deko korrekt festlegen.
+- In Porymap importieren und Ebenen, Paletten, Übergänge und Kollision prüfen.
+- Anschließend ROM bauen und im Emulator testen.
 
-**Status:** Zuordnungsvorschlag und Palette angelegt; noch nicht spielbereit.
+**Status:** Erste Binärdateien erstellt, aber noch nicht in der Engine registriert oder spielbereit.
