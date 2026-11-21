@@ -15,7 +15,7 @@ Ein privates, deutschsprachiges Pokémon-Karmesin-inspiriertes GBA-Spiel auf Bas
 
 ### Cucharico – erster Tileset- und Kartenprototyp
 - Eigenes sekundäres Tileset `gTileset_Cucharico` in `graphics.h`, `metatiles.h` und `headers.h` registriert.
-- 16 Palette-Bänke angelegt; Bank 6 enthält die verwendeten Cucharico-Farben.
+- 16 Palettendateien angelegt; aktuell sind alle 16 Kopien derselben 16-Farben-Palette. Alle Metatile-Grafikeinträge wählen Palette 6.
 - 16 Metatiles mit acht Einträgen pro Metatile und 16 Attributwerten erstellt.
 - Cucharico-Layout auf das eigene Tileset umgestellt.
 - 32×18-Karte mit Gras, Blumen, Weg, Sand, Ufer und Wasser aufgebaut; sekundäre Metatiles beginnen nach den 512 General-Metatiles bei ID 512.
