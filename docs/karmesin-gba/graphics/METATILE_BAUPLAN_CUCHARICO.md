@@ -1,63 +1,47 @@
-# Cucharico – Metatile-Bauplan (Prototyp)
+# Cucharico – Metatile-Bauplan
 
-Dieser Bauplan ordnet die 8×8-Grafik-Tiles aus `graphics/tilesets/cucharico/tiles.png`
-zu ersten 16×16-Motiven. Die Koordinaten sind nullbasiert und beziehen sich auf
-das 16×16-Raster des Atlas. Tile-ID = `Zeile * 16 + Spalte`.
+Der aktuelle Atlas und die Engine-Metatile-Datei verwenden dieselben 16 Motive. Jedes Motiv besteht aus vier 8×8-Grafik-Tiles für eine 16×16-Metatile-Grundebene. Die vier Einträge der oberen Ebene zeigen auf die transparente Tile-ID 256.
 
-## Atlas-Bereiche
+## Atlas-Aufbau
 
-| Atlas-Zeilen | Inhalt |
-|---|---|
-| 0–2 | Grasvarianten |
-| 3–4 | Sand und Erdweg |
-| 5–6 | Wasser |
-| 7 | Uferkante |
-| 8 | Fels/Klippe |
-| 9 | Steinweg |
-| 10–11 | Blattwerk und Stammsegmente |
-| 12–13 | Dach- und Wandfragmente |
-| 14–15 | Zaun, Blumen, Schild und Zierdetails |
+- PNG: 128 × 136 Pixel, indiziertes 4-bpp-Format.
+- 16 × 17 Grafik-Tiles in 8×8 Pixeln (272 Grafik-Tiles insgesamt).
+- Die 16 Motive liegen als 4×4-Metatile-Felder in 32-Pixel-Abständen.
+- Tile-ID im Atlas: `Zeile × 16 + Spalte`.
+- Alle Metatile-Einträge wählen Palettenbank 6.
 
-## Erste 16×16-Motive
+## Metatiles
 
-Jede Zeile unten beschreibt vier 8×8-Quadranten in Lesereihenfolge
-oben links, oben rechts, unten links, unten rechts. Das ist eine
-Grafik-Vorschau-Zuordnung, noch keine direkt ladbare Engine-Metatile-Datei.
+| Lokale ID | Motiv | 8×8-Tile-IDs (oben links, oben rechts, unten links, unten rechts) | Verhalten |
+|---:|---|---|---|
+| 0 | Grundgras | 0, 1, 16, 17 | `MB_NORMAL` |
+| 1 | Grasvariante | 4, 5, 20, 21 | `MB_NORMAL` |
+| 2 | Blumen-/Akzentgras | 8, 9, 24, 25 | `MB_SHORT_GRASS` |
+| 3 | Sand | 12, 13, 28, 29 | `MB_SAND` |
+| 4 | Erdweg | 64, 65, 80, 81 | `MB_NORMAL` |
+| 5 | Wasser | 68, 69, 84, 85 | `MB_OCEAN_WATER` |
+| 6 | Wasser mit Glanz | 72, 73, 88, 89 | `MB_OCEAN_WATER` |
+| 7 | Ufer | 76, 77, 92, 93 | `MB_SAND` |
+| 8 | Fels | 128, 129, 144, 145 | `MB_NORMAL`, Kartenfelder blockiert |
+| 9 | Dorfplatz | 132, 133, 148, 149 | `MB_NORMAL` |
+| 10 | Busch | 136, 137, 152, 153 | `MB_NORMAL`, Kartenfelder blockiert |
+| 11 | Dach | 140, 141, 156, 157 | `MB_NORMAL`, Kartenfelder blockiert |
+| 12 | Hauswand | 192, 193, 208, 209 | `MB_NORMAL`, Kartenfelder blockiert |
+| 13 | Zaun | 196, 197, 212, 213 | `MB_NORMAL`, Kartenfelder blockiert |
+| 14 | Palme | 200, 201, 216, 217 | `MB_NORMAL`, Kartenfelder blockiert |
+| 15 | Schild | 204, 205, 220, 221 | `MB_SIGNPOST`, Kartenfelder blockiert |
 
-| Motiv | 8×8-Tile-IDs | Zweck |
-|---|---|---|
-| Gras A | 0, 1, 16, 17 | Standardboden |
-| Gras B | 2, 3, 18, 19 | Gras mit kleinen Details |
-| Gras C | 4, 5, 20, 21 | Blumen-/Akzentgras im aktuellen Metatile-Prototyp |
-| Sand A | 48, 49, 64, 65 | heller Sand |
-| Erdweg A | 64, 65, 80, 81 | kompakter Dorfweg |
-| Wasser A | 80, 81, 96, 97 | ruhige Wasserfläche |
-| Wasser B | 82, 83, 98, 99 | Wasser mit Glanzpixeln |
-| Ufer A | 112, 113, 128, 129 | gerade Uferkante |
-| Fels A | 128, 129, 144, 145 | Felswand |
-| Stein A | 144, 145, 160, 161 | gepflasterter Weg |
-| Blattwerk A | 160, 161, 176, 177 | Busch-/Baumlaub-Ausschnitt |
-| Dach A | 192, 193, 208, 209 | Dachfläche |
-| Wand A | 208, 209, 224, 225 | helle Hauswand |
-| Zaun A | 224, 225, 240, 241 | Dekoration |
+## Binärdateien
 
-## Palette und Binärdateien
-
-Die Secondary-Palette liegt unter `data/tilesets/secondary/cucharico/palettes/06.pal`.
-Sie enthält 16 Einträge und entspricht der indizierten PNG-Palette. Die 16 Engine-Palettendateien sind derzeit identische Kopien; sämtliche Metatile-Einträge verwenden Palettenbank 6.
-
-Der erste Binär-Prototyp besteht aus:
 - `metatiles.bin`: 16 × 8 × 2 Byte = 256 Byte.
 - `metatile_attributes.bin`: 16 × 2 Byte = 32 Byte.
-- Pro Metatile folgen auf vier Tile-Einträge der unteren Ebene vier der oberen Ebene.
-- Die oberen Einträge verweisen überwiegend auf die transparente Tile-ID 256; Metatile 15 nutzt zusätzlich Tile-ID 257.
-- Die Attributdatei enthält `MB_SHORT_GRASS` für Metatile 2, `MB_SAND` für Metatiles 3 und 7 sowie `MB_OCEAN_WATER` für Metatile 5. Andere Attribute stehen auf `MB_NORMAL`.
-- Die Kartenfelder mit Fels (Metatile 8) und Busch (Metatile 10) werden separat über Mapgrid-Kollisionsbits blockiert.
+- Tile-ID 256 ist der transparente Eintrag der zusätzlichen Atlas-Zeile und bildet die leere obere Ebene.
+- `palettes/00.pal` bis `palettes/15.pal` enthalten derzeit dieselbe 16-Farben-Palette; die Motive nutzen Palettenbank 6.
 
-## Noch offene Engine-Arbeit
+## Verwendung in den Karten
 
-- In Porymap öffnen und Ebenen, Palette 6, Übergänge und Kollision visuell prüfen.
-- Die noch fehlenden Häuser, Zäune, Palmen, Steg und sichtbaren Schilder auf der Karte platzieren.
-- Anschließend ROM bauen und im Emulator testen.
+- `Cucharico`: 32 × 18 Metatiles, Küstendorf, zwei Hausfassaden, Dorfplatz, Schilder und Strand.
+- `Cucharico_Path`: 32 × 24 Metatiles, über Nord-/Südverbindung angeschlossen.
+- `Cucharico_PlayerHouse`: 11 × 9; das Innenlayout ist vorläufig eine Kopie des Emerald-Hauses und noch nicht im Paldea-Stil.
 
-**Status:** Tileset, Metatiles und Attributdatei sind in der Engine registriert; Cucharico hat einen ersten Terrain-Aufbau. Porymap-GUI, ROM-Build und Emulator-Test fehlen.
+**Noch offen:** Porymap-GUI-Prüfung, ROM-Build und Emulator-Test. Details stehen in [PORYMAP_PRUEFUNG.md](../maps/PORYMAP_PRUEFUNG.md).
