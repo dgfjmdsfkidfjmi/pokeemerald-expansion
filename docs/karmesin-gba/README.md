@@ -29,4 +29,4 @@ Den ehrlichen Umsetzungs- und Build-Status findest du in [BUILD_STATUS.md](BUILD
 - Inlet-Grotte
 
 ## Technischer Status
-Dies ist zunächst eine Planungsdatei. Es wurden noch keine Karten, Events oder Grafiken im Spiel implementiert und noch keine GBA-ROM gebaut.
+Es existieren erste technische Prototypen für Cucharico: Map-Registrierung, eigenes sekundäres Tileset, Metatile-/Attributdateien, ein 32×18-Terrain-Aufbau sowie Schild-Events und Nemilas Platzhalter-NPC. Diese Daten wurden noch nicht in Porymap visuell geprüft; es gibt keinen bestätigten ROM-Build oder Emulator-Test. Weitere Karten sind weiterhin überwiegend Planung.
