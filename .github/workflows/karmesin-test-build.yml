@@ -1,0 +1,41 @@
+name: Karmesin GBA Test Build
+
+on:
+  push:
+    branches:
+      - private-karmesin-gba
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-karmesin:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v4
+
+      - name: Install GBA build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            binutils-arm-none-eabi \
+            gcc-arm-none-eabi \
+            libnewlib-arm-none-eabi \
+            libpng-dev \
+            python3
+
+      - name: Build Emerald test ROM
+        env:
+          GAME_VERSION: EMERALD
+          COMPARE: "0"
+        run: make -j"$(nproc)" -O all
+
+      - name: Upload test ROM
+        uses: actions/upload-artifact@v4
+        with:
+          name: karmesin-gba-test-rom
+          path: pokeemerald.gba
+          if-no-files-found: error
+          retention-days: 14
