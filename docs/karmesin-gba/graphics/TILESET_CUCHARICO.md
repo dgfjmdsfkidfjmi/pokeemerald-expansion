@@ -121,8 +121,8 @@ Engine-Datei: `data/tilesets/secondary/cucharico/tiles.png`
   Grasvarianten, Sand, Wasser/Wellen, Ufer, Wege, Felsen, Vegetation,
   Baumstammsegmente, Dach-/Wandfragmente sowie kleine Dekorationen
 - 16 Einträge in einer indizierten Palette; erster Eintrag transparent
-- Klare Pixelkanten ohne Glättung; die Kacheln sind als Grafik-Tiles
-  angelegt, noch nicht als fertige 16×16-Metatiles zusammengesetzt
+- Klare Pixelkanten ohne Glättung; die 8×8-Grafik-Tiles werden in einem
+  separaten Binär-Prototyp zu 16 Metatiles mit je acht Ebeneneinträgen kombiniert
 
 Dies ist ein **Grafik- und Metatile-Prototyp**, noch kein fertiges Art-Pack:
 Die Motive sind eine eigenständige Annäherung an den klassischen Gen-3-GBA-Pixelstil.
@@ -137,8 +137,8 @@ Porymap-Prüfung, Map-Aufbau und Build-Test fehlen weiterhin.
 - [x] Engine-Verzeichnisstruktur anhand vorhandener Tilesets geprüft
 - [x] Erster indizierter 8×8-Grafik-Prototyp erstellt
 - [x] Atlas im klassischen Gen-3-GBA-Stil überarbeitet (Nacharbeit offen)
-- [ ] GBA-Paletten erstellt und geprüft
-- [ ] Metatiles und Attribute erstellt
+- [x] Erste GBA-Palette erstellt (Porymap-/Build-Prüfung offen)
+- [x] Erste 16 Metatiles und Attribute als Binär-Prototyp erstellt (Kollision noch offen)
 - [ ] Tileset in der Engine registriert
 - [ ] Cucharico in Porymap aufgebaut
 - [ ] ROM-Build und Emulator-Test
