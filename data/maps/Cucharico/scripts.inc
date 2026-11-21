@@ -18,8 +18,24 @@ Cucharico_Text_BeachSign:
 	.string "Please keep the coast clean.$"
 
 Cucharico_EventScript_Nemila::
-	msgbox Cucharico_Text_Nemila, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox Cucharico_Text_Nemila_Intro, MSGBOX_DEFAULT
+	msgbox Cucharico_Text_Nemila_Paldea, MSGBOX_DEFAULT
+	msgbox Cucharico_Text_Nemila_Friend, MSGBOX_DEFAULT
+	release
 	end
 
-Cucharico_Text_Nemila:
-	.string "Hey! Du bist also auch hier!$"
+Cucharico_Text_Nemila_Intro:
+	.string "Hey! Du bist also auch hier!\n"
+	.string "Ich habe dich schon erwartet.$"
+
+Cucharico_Text_Nemila_Paldea:
+	.string "Willkommen in PALDEA!\p"
+	.string "Hier gibt es so viel zu entdecken.\n"
+	.string "Ich kann es kaum erwarten, loszulegen!$"
+
+Cucharico_Text_Nemila_Friend:
+	.string "Ach ja, ich bin NEMILA!\p"
+	.string "Wir werden bestimmt eine Menge Spaß\n"
+	.string "zusammen haben. Auf ins Abenteuer!$"
