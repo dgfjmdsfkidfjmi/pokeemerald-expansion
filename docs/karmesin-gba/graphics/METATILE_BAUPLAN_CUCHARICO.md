@@ -28,7 +28,7 @@ Grafik-Vorschau-Zuordnung, noch keine direkt ladbare Engine-Metatile-Datei.
 |---|---|---|
 | Gras A | 0, 1, 16, 17 | Standardboden |
 | Gras B | 2, 3, 18, 19 | Gras mit kleinen Details |
-| Gras C | 32, 33, 48, 49 | Blumen-/Akzentgras |
+| Gras C | 4, 5, 20, 21 | Blumen-/Akzentgras im aktuellen Metatile-Prototyp |
 | Sand A | 48, 49, 64, 65 | heller Sand |
 | Erdweg A | 64, 65, 80, 81 | kompakter Dorfweg |
 | Wasser A | 80, 81, 96, 97 | ruhige Wasserfläche |
@@ -50,16 +50,14 @@ Der erste Binär-Prototyp besteht aus:
 - `metatiles.bin`: 16 × 8 × 2 Byte = 256 Byte.
 - `metatile_attributes.bin`: 16 × 2 Byte = 32 Byte.
 - Pro Metatile folgen auf vier Tile-Einträge der unteren Ebene vier der oberen Ebene.
-- Die oberen Einträge verweisen auf die transparente Tile-ID 256.
-- Alle Attribute stehen vorläufig auf 0; dadurch sind auch Wasser und Hindernisse
-  noch nicht korrekt gesperrt.
+- Die oberen Einträge verweisen überwiegend auf die transparente Tile-ID 256; Metatile 15 nutzt zusätzlich Tile-ID 257.
+- Die Attributdatei enthält `MB_SHORT_GRASS` für Metatile 2, `MB_SAND` für Metatiles 3 und 7 sowie `MB_OCEAN_WATER` für Metatile 5. Andere Attribute stehen auf `MB_NORMAL`.
+- Die Kartenfelder mit Fels (Metatile 8) und Busch (Metatile 10) werden separat über Mapgrid-Kollisionsbits blockiert.
 
 ## Noch offene Engine-Arbeit
 
-- Tileset-C-Arrays und Pointer registrieren.
-- Cucharico als Secondary-Tileset in einem Map-Layout eintragen.
-- Attributwerte für Wasser, Felsen, Wände, Zäune und Deko korrekt festlegen.
-- In Porymap importieren und Ebenen, Paletten, Übergänge und Kollision prüfen.
+- In Porymap öffnen und Ebenen, Palette 6, Übergänge und Kollision visuell prüfen.
+- Die noch fehlenden Häuser, Zäune, Palmen, Steg und sichtbaren Schilder auf der Karte platzieren.
 - Anschließend ROM bauen und im Emulator testen.
 
-**Status:** Erste Binärdateien erstellt, aber noch nicht in der Engine registriert oder spielbereit.
+**Status:** Tileset, Metatiles und Attributdatei sind in der Engine registriert; Cucharico hat einen ersten Terrain-Aufbau. Porymap-GUI, ROM-Build und Emulator-Test fehlen.
