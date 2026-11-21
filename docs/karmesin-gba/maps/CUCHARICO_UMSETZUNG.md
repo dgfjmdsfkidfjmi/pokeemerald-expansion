@@ -16,6 +16,9 @@ Jede Karte benötigt mindestens:
 
 Die vorhandene Karte Littleroot Town zeigt das JSON-/Event-Schema. Ihre Layout-Binärdateien sind eigene Dateien; eine reine JSON-Skizze reicht daher nicht für eine kompilierbare Karte.
 
+## Vollständiger Entwurf
+Der detaillierte Zonen-, Raster-, Interaktions-, Grafik- und Kollisionsentwurf steht in [CUCHARICO_DESIGN.md](CUCHARICO_DESIGN.md). Das Spielerhaus wird separat in [SPIELERHAUS_UMSETZUNG.md](SPIELERHAUS_UMSETZUNG.md) vorbereitet.
+
 ## Geplanter Kartenaufbau
 Zielgröße: **32 × 18 Metatiles**.
 
