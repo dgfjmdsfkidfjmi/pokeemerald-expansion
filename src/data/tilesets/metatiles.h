@@ -9,6 +9,9 @@ const u16 gMetatileAttributes_SecretBaseSecondary[] = INCBIN_U16("data/tilesets/
 const u16 gMetatiles_General[] = INCBIN_U16("data/tilesets/primary/general/metatiles.bin");
 const u16 gMetatileAttributes_General[] = INCBIN_U16("data/tilesets/primary/general/metatile_attributes.bin");
 
+const u16 gMetatiles_Cucharico[] = INCBIN_U16("data/tilesets/secondary/cucharico/metatiles.bin");
+const u16 gMetatileAttributes_Cucharico[] = INCBIN_U16("data/tilesets/secondary/cucharico/metatile_attributes.bin");
+
 const u16 gMetatiles_Petalburg[] = INCBIN_U16("data/tilesets/secondary/petalburg/metatiles.bin");
 const u16 gMetatileAttributes_Petalburg[] = INCBIN_U16("data/tilesets/secondary/petalburg/metatile_attributes.bin");
 
