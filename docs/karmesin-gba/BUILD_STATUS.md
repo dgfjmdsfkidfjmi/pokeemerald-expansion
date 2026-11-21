@@ -23,8 +23,10 @@ Ein privates, deutschsprachiges Pokémon-Karmesin-inspiriertes GBA-Spiel auf Bas
 - Nemila ist als NPC-Eintrag mit einem ersten Dialog vorhanden.
 
 ## Was ausdrücklich noch NICHT fertig ist
-- Das Cucharico-Layout enthält aktuell nur ein wiederholtes Platzhalter-Metatile und ist keine gestaltete Dorfkarte.
-- Es fehlen echte Paldea-Grafiken, Häuser, Wege, Strand, Klippen, Palmen und ein individuelles Nemila-Sprite.
+- Das Tileset ist registriert, aber noch nicht mit Porymap oder einem ROM-Build validiert.
+- Das aktuelle 32×18-Layout ist ein erster Terrain-Testaufbau, noch kein fertiges Dorf mit Häusern, Klippen, Palmen und individuellen Dekorationen.
+- Die Metatile-Attribute stehen noch alle auf 0; Wasser, Felsen und Dekorationen besitzen daher noch keine korrekte Kollision.
+- Ein individuelles Nemila-Sprite fehlt.
 - Spielerhaus, Cucharico-Pfad, Inlet-Grotte, Pratolido und Mesalona City sind noch keine verbundenen spielbaren Karten.
 - Cucharico verwendet vorläufige Hoenn-Regions-/Kartenabschnittswerte und Littleroot-Musik.
 - Warps und Verbindungen zwischen den Anfangskarten fehlen.
