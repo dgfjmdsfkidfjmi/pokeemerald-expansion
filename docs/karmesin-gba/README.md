@@ -2,6 +2,9 @@
 
 Dieses Verzeichnis enthält die Planung für einen privaten Pokémon-Karmesin-inspirierten GBA-ROM-Hack auf Basis von pokeemerald-expansion.
 
+## Aktueller Stand
+Den ehrlichen Umsetzungs- und Build-Status findest du in [BUILD_STATUS.md](BUILD_STATUS.md). Die vorhandenen Map- und Story-Dateien enthalten teilweise noch Platzhalter und sind nicht als fertiges, spielbares ROM zu verstehen.
+
 ## Entwicklungsregeln
 - Änderungen erfolgen auf dem Branch `private-karmesin-gba`, nicht auf `master`.
 - Das Originalprojekt bleibt unverändert.
