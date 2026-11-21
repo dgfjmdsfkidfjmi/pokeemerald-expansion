@@ -42,6 +42,8 @@ Koordinatenursprung: oben links (0,0).
 - Keine Trainerkämpfe auf dieser ersten Karte.
 
 ## Grafikrichtung
+
+Die verbindliche visuelle Referenz ist **Bild 1**. Die technische Tileset-Spezifikation und der erste Atlas-Umfang stehen in [TILESET_CUCHARICO.md](../graphics/TILESET_CUCHARICO.md).
 - GBA-Pokémon-Perspektive von oben, 16×16-Metatile-Raster.
 - Mehrere abgestimmte Farben pro Material: Gras, Sand, Wasser, Fels und Dächer.
 - Küstenwasser mit wechselnden Ufer-Metatiles; Wege mit klaren Kanten.
