@@ -124,13 +124,12 @@ Engine-Datei: `data/tilesets/secondary/cucharico/tiles.png`
 - Klare Pixelkanten ohne Glättung; die Kacheln sind als Grafik-Tiles
   angelegt, noch nicht als fertige 16×16-Metatiles zusammengesetzt
 
-Dies ist ein **verbesserter Grafik-Prototyp**, noch kein fertiges
-Art-Pack: Die Motive sind eine eigenständige Annäherung an den klassischen
-Gen-3-GBA-Pixelstil und keine kopierten Original-Emerald-Tiles. Die
-Kachelübergänge, Objektzusammensetzungen und Lesbarkeit müssen noch in
-Porymap geprüft und weiter verfeinert werden. Insbesondere sind noch keine Metatiles,
-Kollisionsattribute oder Engine-Registrierung vorhanden. Das Bild wurde
-als separate Quelldatei abgelegt und ersetzt keine bestehenden Tilesets.
+Dies ist ein **Grafik- und Metatile-Prototyp**, noch kein fertiges Art-Pack:
+Die Motive sind eine eigenständige Annäherung an den klassischen Gen-3-GBA-Pixelstil.
+Ein erstes Set aus 16 Metatiles sowie 2-Byte-Attributen liegt im Engine-Verzeichnis.
+Die Attribute stehen vorläufig alle auf normal/begehbar; Wasser, Felsen und Gebäude
+haben daher noch keine korrekte Kollision. Tileset-Pointer, C-Registrierung,
+Porymap-Prüfung, Map-Aufbau und Build-Test fehlen weiterhin.
 
 ## Status
 
