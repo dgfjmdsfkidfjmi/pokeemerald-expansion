@@ -11,11 +11,11 @@ Cucharico_EventScript_BeachSign::
 
 Cucharico_Text_VillageSign:
 	.string "CUCHARICO\n"
-	.string "A quiet village by the sea.$"
+	.string "Ein Dorf am Meer.$"
 
 Cucharico_Text_BeachSign:
-	.string "BEACH\n"
-	.string "Please keep the coast clean.$"
+	.string "STRAND\n"
+	.string "Bitte halte die Kueste sauber.$"
 
 Cucharico_EventScript_Nemila::
 	lock
@@ -31,11 +31,11 @@ Cucharico_Text_Nemila_Intro:
 	.string "Ich habe schon auf dich gewartet.$"
 
 Cucharico_Text_Nemila_Paldea:
-	.string "Willkommen in PALDEA!\p"
+	.string "Willkommen in PALDEA!\\p"
 	.string "Hier gibt es so viel zu entdecken.\n"
 	.string "Ich kann es kaum erwarten, mit dir loszuziehen!$"
 
 Cucharico_Text_Nemila_Friend:
-	.string "Ach ja, ich bin NEMILA!\p"
-	.string "Ich liebe Pokémon-Kämpfe. Wenn du\n"
-	.string "magst, können wir bald zusammen trainieren!$"
+	.string "Ach ja, ich bin NEMILA!\\p"
+	.string "Ich liebe Pokemon-Kaempfe. Wenn du\n"
+	.string "magst, koennen wir bald zusammen trainieren!$"
