@@ -44,7 +44,7 @@ Grafik-Vorschau-Zuordnung, noch keine direkt ladbare Engine-Metatile-Datei.
 ## Palette und Binärdateien
 
 Die Secondary-Palette liegt unter `data/tilesets/secondary/cucharico/palettes/06.pal`.
-Sie enthält 16 Einträge und entspricht der indizierten PNG-Palette.
+Sie enthält 16 Einträge und entspricht der indizierten PNG-Palette. Die 16 Engine-Palettendateien sind derzeit identische Kopien; sämtliche Metatile-Einträge verwenden Palettenbank 6.
 
 Der erste Binär-Prototyp besteht aus:
 - `metatiles.bin`: 16 × 8 × 2 Byte = 256 Byte.
