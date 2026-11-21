@@ -41,6 +41,17 @@ const struct Tileset gTileset_General =
     .callback = InitTilesetAnim_General,
 };
 
+const struct Tileset gTileset_Cucharico =
+{
+    .isCompressed = FALSE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Cucharico,
+    .palettes = gTilesetPalettes_Cucharico,
+    .metatiles = gMetatiles_Cucharico,
+    .metatileAttributes = gMetatileAttributes_Cucharico,
+    .callback = NULL,
+};
+
 const struct Tileset gTileset_Petalburg =
 {
     .isCompressed = TRUE,
