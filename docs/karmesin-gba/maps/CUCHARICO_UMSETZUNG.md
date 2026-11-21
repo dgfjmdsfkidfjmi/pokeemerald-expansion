@@ -1,6 +1,6 @@
 # Cucharico – Umsetzungsplan für die erste echte Spielkarte
 
-Status: technische Bauvorbereitung – noch keine spielbare Karte.
+Status: Kartenregistrierung vorhanden; Layoutgrafik und Verbindungen sind noch Platzhalter – noch keine spielbare Karte.
 
 ## Ziel
 Die erste Paldea-Karte wird als eigenständige Außenkarte im Emerald-Engine-Format angelegt. Der Ortsname im Spiel lautet **Cucharico**. Die Karte soll eine kleine Küstensiedlung mit südlichem Strand, zentralem Dorfplatz und nördlichem Ausgang zum Cucharico-Pfad werden.
@@ -43,6 +43,15 @@ Koordinatenursprung: oben links (0,0).
 - Mehrere abgestimmte Farben pro Material: Gras, Sand, Wasser, Fels und Dächer.
 - Küstenwasser mit wechselnden Ufer-Metatiles; Wege mit klaren Kanten.
 - Häuser, Palmen, Büsche, Blumen und Steg als echte Tileset-Objekte statt Textzeichen oder Farbflächen.
+
+## Tatsächlicher Zwischenstand auf `private-karmesin-gba`
+- `map.json`, `scripts.inc`, Map-Gruppen-Eintrag und `LAYOUT_CUCHARICO` sind angelegt.
+- Das Layout ist 32 × 18 Metatiles groß, aber `map.bin` besteht derzeit nur aus demselben Platzhalter-Metatile `0x0130` an jeder Position. Das ergibt noch kein gestaltetes Dorf.
+- Die beiden Schild-Events und Nemilas NPC-/Dialogeintrag sind vorhanden. Nemilas Position und Höhe müssen nach dem echten Layout geprüft werden.
+- Die Karte verwendet vorläufig Hoenn/Littleroot-Regiondaten und Littleroot-Musik. Diese Werte sind ausdrücklich Platzhalter und müssen durch gültige Paldea-Konstanten bzw. passende Musik ersetzt werden, sobald sie im Projekt definiert sind.
+- Es gibt noch keine Warps oder Kartenverbindungen. Cucharico ist daher noch nicht mit Spielerhaus oder Cucharico-Pfad verbunden.
+- Die aktuelle Nemila-Grafik ist `OBJ_EVENT_GFX_GIRL_3`; das ist nur ein Platzhalter, kein eigenes Nemila-Sprite.
+- Es wurde kein ROM-Build und kein Emulator-Test durchgeführt.
 
 ## Noch notwendige technische Arbeit
 1. Eigenes Paldea-Tileset bzw. zulässige, passende Basis-Metatiles festlegen.
