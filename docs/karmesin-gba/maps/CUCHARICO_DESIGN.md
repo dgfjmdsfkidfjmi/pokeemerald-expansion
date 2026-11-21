@@ -1,6 +1,6 @@
 # Cucharico – vollständiger GBA-Kartenentwurf
 
-Status: vollständiger Design- und Bauplan; noch nicht als echte Tileset-Karte importiert.
+Status: Design- und Bauplan mit erstem 32×18-Terrain-Prototyp im Engine-Layout; noch keine vollständige Dorfkarte und noch nicht in Porymap visuell geprüft.
 
 ## Spielgefühl und Orientierung
 Cucharico ist ein kleines, sonniges Küstendorf. Der Spieler soll vom Haus aus den Dorfplatz sofort erkennen, Nemila dort finden und den Weg nach Norden zum Cucharico-Pfad sehen. Der Strand liegt südlich und westlich; Klippen und Palmen rahmen die Siedlung ein.
@@ -51,7 +51,7 @@ WWWWWWWWWWWWWWPPPPWWWWWWWWWWWWWW
 
 ## Interaktionspunkte
 - Spielerhaustür im Nordwesten: Warp in die separate Spielerhaus-Karte.
-- Nemila: am Dorfplatz, zunächst nach dem Haus-Intro ansprechbar; ihre aktuelle Position (22,9) wird auf die finale freie Pflasterfläche verschoben, falls nötig.
+- Nemila: im aktuellen Binär-Prototyp bei (18,9) auf dem gepflasterten Metatile 9; Dialogablauf und endgültige Platzierung müssen noch im Spiel getestet werden.
 - Dorfschild am nördlichen Weg: Name „Cucharico“ und kurzer Ortsgruß.
 - Strandschild am westlichen Strandzugang: kurzer Hinweis auf den Strand.
 - Nordausgang: Warp/Verbindung zum Cucharico-Pfad, sobald die Zielkarte existiert.
@@ -61,7 +61,7 @@ WWWWWWWWWWWWWWPPPPWWWWWWWWWWWWWW
 - Wasser, Felswände, Hauswände und Zäune blockieren.
 - Pflaster, Gras, Sand und Steg sind begehbar; Steg erhält eigene Wasser-/Kollisionskante.
 - Hausdach und dekorative Baumkronen werden als Overhead-Objekte behandelt.
-- Nemila steht auf einer begehbaren Boden-Metat tile mit passender Elevation; Höhe 3 aus dem aktuellen Platzhalter-JSON nicht blind übernehmen.
+- Nemila steht auf einer begehbaren Boden-Metat tile mit passender Elevation; der aktuelle Eintrag nutzt Elevation 3 wie die Testkarte.
 - Warps liegen exakt vor Türen bzw. auf der markierten Nordöffnung.
 
 ## Grafik- und Audioleitlinie
@@ -79,4 +79,4 @@ WWWWWWWWWWWWWWPPPPWWWWWWWWWWWWWW
 5. Erfolgreicher ROM-Build dokumentiert.
 
 ## Aktueller technischer Stand
-Die Map-Registrierung existiert bereits. Die aktuelle map.bin enthält jedoch nur ein wiederholtes Platzhalter-Metatile; dieser Entwurf ändert das nicht. Ohne echtes Tileset/Porymap-Layout, gültige Paldea-Konstanten, verbundene Zielkarten und Build-Test ist Cucharico weiterhin nicht spielbar.
+Die Map-Registrierung und ein erster Terrain-Aufbau in `map.bin` existieren. Die Binärdaten verwenden Gras-/Akzentgras-, Sand-, Weg-, Wasser-, Ufer-, Stein-, Fels- und Busch-Metatiles. Nemila ist auf das Pflaster bei (18,9) gesetzt. Die automatisierte Formatprüfung ist in [PORYMAP_PRUEFUNG.md](PORYMAP_PRUEFUNG.md) festgehalten. Ohne visuelle Porymap-Prüfung, Dorfarchitektur, gültige Paldea-Konstanten, verbundene Zielkarten und Build-Test ist Cucharico weiterhin nicht spielbar.
