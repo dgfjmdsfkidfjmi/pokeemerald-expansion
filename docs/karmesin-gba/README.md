@@ -1,15 +1,19 @@
 # Karmesin-GBA – privates Fanprojekt
 
-Dieses Verzeichnis enthält die Planung für einen privaten Pokémon-Karmesin-inspirierten GBA-ROM-Hack auf Basis von pokeemerald-expansion.
+Dieses Verzeichnis enthält die Planung und den technischen Stand eines privaten Pokémon-Karmesin-inspirierten GBA-ROM-Projekts auf Basis von pokeemerald-expansion.
 
 ## Aktueller Stand
-Den ehrlichen Umsetzungs- und Build-Status findest du in [BUILD_STATUS.md](BUILD_STATUS.md). Die vorhandenen Map- und Story-Dateien enthalten teilweise noch Platzhalter und sind nicht als fertiges, spielbares ROM zu verstehen.
+
+Cucharico besitzt inzwischen ein eigenes sekundäres Tileset, eine 32×18-Außenkarte, einen verbundenen 32×24-Cucharico-Pfad und eine separate Spielerhaus-Innenkarte. Die Außenkarte enthält erste Häuser, Zäune, Palmen, Schilder, Dorfplatz, Strand und Nemila. Das Spielerhaus-Innenlayout verwendet noch eine Hoenn-Platzhalterkarte.
+
+Der ehrliche Umsetzungs- und Build-Status steht in [BUILD_STATUS.md](BUILD_STATUS.md); die technische Kartenvorprüfung steht in [maps/PORYMAP_PRUEFUNG.md](maps/PORYMAP_PRUEFUNG.md). Porymap-GUI, ROM-Build und Emulator-Test sind noch offen.
 
 ## Entwicklungsregeln
+
 - Änderungen erfolgen auf dem Branch `private-karmesin-gba`, nicht auf `master`.
 - Das Originalprojekt bleibt unverändert.
-- Dieses Projekt ist für den privaten Gebrauch gedacht; es werden keine Pull Requests an das Originalprojekt eingereicht.
-- Vor jeder spielbaren ROM müssen Karten, Events, Grafiken, Musik und Spielabläufe tatsächlich integriert und anschließend kompiliert und getestet werden.
+- Das Projekt ist privat; es werden keine Pull Requests an das Originalprojekt eingereicht.
+- Eine Karte gilt erst nach erfolgreicher Kompilierung und Emulatorprüfung als spielbarer Inhalt.
 
 ## Spielaufbau
 
@@ -22,11 +26,6 @@ Den ehrlichen Umsetzungs- und Build-Status findest du in [BUILD_STATUS.md](BUILD
 - Kitakami: Dorf, Festival, Ogerpon-Handlung, Masken und Nebenquests.
 - Blaubeer-Akademie: Terarium, Liga-AG, Terapagos und Tera-Herausforderungen.
 
-## Erster umzusetzender Abschnitt
-- Spielerhaus
-- Cucharico
-- Cucharico-Pfad
-- Inlet-Grotte
+## Nächste größere Karten
 
-## Technischer Status
-Es existieren erste technische Prototypen für Cucharico: Map-Registrierung, eigenes sekundäres Tileset, Metatile-/Attributdateien, ein 32×18-Terrain-Aufbau sowie Schild-Events und Nemilas Platzhalter-NPC. Diese Daten wurden noch nicht in Porymap visuell geprüft; es gibt keinen bestätigten ROM-Build oder Emulator-Test. Weitere Karten sind weiterhin überwiegend Planung.
+Nach der Stabilisierung von Cucharico folgen Inlet-Grotte, Südliche Zone 1, Pratolido und Mesalona City.
