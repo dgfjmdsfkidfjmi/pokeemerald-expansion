@@ -28,12 +28,12 @@ Cucharico_EventScript_Nemila::
 
 Cucharico_Text_Nemila_Intro:
 	.string "Hey! Du bist also auch hier!\n"
-	.string "Ich habe dich schon erwartet.$"
+	.string "Ich habe schon auf dich gewartet.$"
 
 Cucharico_Text_Nemila_Paldea:
 	.string "Willkommen in PALDEA!\p"
 	.string "Hier gibt es so viel zu entdecken.\n"
-	.string "Ich kann es kaum erwarten, loszulegen!$"
+	.string "Ich kann es kaum erwarten, mit dir loszuziehen!$"
 
 Cucharico_Text_Nemila_Friend:
 	.string "Ach ja, ich bin NEMILA!\p"
