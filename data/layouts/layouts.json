@@ -9323,6 +9323,17 @@
       "border_filepath": "data/layouts/OneIsland_KindleRoad_EmberSpa_Frlg/border.bin",
       "blockdata_filepath": "data/layouts/OneIsland_KindleRoad_EmberSpa_Frlg/map.bin",
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_CUCHARICO",
+      "name": "Cucharico_Layout",
+      "width": 32,
+      "height": 18,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Cucharico/border.bin",
+      "blockdata_filepath": "data/layouts/Cucharico/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }
