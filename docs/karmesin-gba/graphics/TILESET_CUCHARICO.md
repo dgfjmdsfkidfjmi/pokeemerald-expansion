@@ -129,9 +129,9 @@ Die Motive sind eine eigenständige Annäherung an den klassischen Gen-3-GBA-Pix
 Ein erstes Set aus 16 Metatiles sowie 2-Byte-Attributen liegt im Engine-Verzeichnis.
 Das Tileset ist in `graphics.h`, `metatiles.h` und `headers.h` registriert und dem
 Cucharico-Layout zugewiesen. Die 32×18-Testkarte enthält erste Terrainflächen.
-Die Attribute sind teilweise gesetzt: Gras-/Blumen-Metatile mit `MB_TALL_GRASS`,
+Die Attribute sind teilweise gesetzt: Blumen-/Akzentgras mit `MB_SHORT_GRASS`,
 Sand/Ufer mit `MB_SAND`, Wasser mit `MB_OCEAN_WATER`. In der 32×18-Testkarte sind
-19 Fels-/Busch-Felder über die Mapgrid-Kollisionsbits blockiert. Porymap-Prüfung,
+19 Fels-/Busch-Felder über die Mapgrid-Kollisionsbits blockiert. Porymap-GUI-Prüfung,
 visuelle Nacharbeit, Build-Test und Emulator-Test fehlen weiterhin.
 
 ## Status
