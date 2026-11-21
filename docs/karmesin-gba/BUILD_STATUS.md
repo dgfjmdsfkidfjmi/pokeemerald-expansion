@@ -20,18 +20,18 @@ Ein privates, deutschsprachiges Pokémon-Karmesin-inspiriertes GBA-Spiel auf Bas
 - Cucharico-Layout auf das eigene Tileset umgestellt.
 - 32×18-Karte mit Gras, Blumen, Weg, Sand, Ufer und Wasser aufgebaut; sekundäre Metatiles beginnen nach den 512 General-Metatiles bei ID 512.
 - Zwei Schild-Events sind in den Map-Daten und Skripten eingetragen.
-- Nemila ist als NPC-Eintrag mit einem ersten Dialog vorhanden.
+- Nemila ist als NPC-Eintrag mit einem ersten Dialog vorhanden und steht im Kartenprototyp auf dem gepflasterten Platz bei (18, 9).
 
 ## Was ausdrücklich noch NICHT fertig ist
 - Das Tileset ist registriert, aber noch nicht mit Porymap oder einem ROM-Build validiert.
 - Das aktuelle 32×18-Layout ist ein erster Terrain-Testaufbau, noch kein fertiges Dorf mit Häusern, Klippen, Palmen und individuellen Dekorationen.
-- Metatile-Attribute nutzen jetzt `MB_TALL_GRASS` für das Gras-/Blumen-Metatile, `MB_SAND` für Sand/Ufer und `MB_OCEAN_WATER` für Wasser. 19 Kartenfelder mit Fels-/Busch-Metatiles haben zusätzlich die Mapgrid-Kollisionsbits gesetzt. Diese Werte sind noch nicht im Spiel getestet.
+- Metatile-Attribute nutzen `MB_SHORT_GRASS` für das Blumen-/Akzentgras, `MB_SAND` für Sand/Ufer und `MB_OCEAN_WATER` für Wasser. 19 Kartenfelder mit Fels-/Busch-Metatiles haben zusätzlich die Mapgrid-Kollisionsbits gesetzt. Diese Werte sind noch nicht im Spiel getestet.
 - Ein individuelles Nemila-Sprite fehlt.
 - Spielerhaus, Cucharico-Pfad, Inlet-Grotte, Pratolido und Mesalona City sind noch keine verbundenen spielbaren Karten.
 - Cucharico verwendet vorläufige Hoenn-Regions-/Kartenabschnittswerte und Littleroot-Musik.
 - Warps und Verbindungen zwischen den Anfangskarten fehlen.
 - Starterwahl mit Sprigatito, Krokel und Kwaks ist bisher nur geplant; die Engine-Auswahl wurde nicht umgestellt.
-- Nemilas Dialog/NPC wurde nicht kompiliert oder im Spiel getestet.
+- Nemilas Dialog/NPC wurde nicht kompiliert oder im Spiel getestet; ihre Position (18, 9) liegt laut Binärdaten auf dem Pflaster-Metatile 9.
 - Es wurde noch keine GBA-ROM gebaut oder in einem Emulator getestet.
 
 ## Reihenfolge der nächsten Arbeit
@@ -49,4 +49,4 @@ Eine Änderung gilt erst dann als spielbar, wenn die relevanten Daten generiert,
 
 ## Grafik – Cucharico
 
-Die Tileset-Spezifikation und Produktionsreihenfolge stehen in [TILESET_CUCHARICO.md](graphics/TILESET_CUCHARICO.md). Der indizierte 128×136-Grafik-Atlas, 16 Metatiles, 16 Attribute und alle 16 Palettenbänke liegen unter `data/tilesets/secondary/cucharico/`. Das Tileset ist in den Engine-Datendateien registriert und dem Cucharico-Layout zugewiesen. Die 32×18-Testkarte verwendet sekundäre Metatile-IDs ab 512 (General enthält 512 Metatiles). Die Terrain-Attribute sind teilweise gesetzt (Gras, Sand/Ufer, Wasser); 19 Fels-/Busch-Felder sind als blockierend markiert. Porymap-, Build- und Emulator-Test fehlen.
+Die Tileset-Spezifikation und Produktionsreihenfolge stehen in [TILESET_CUCHARICO.md](graphics/TILESET_CUCHARICO.md). Der indizierte 128×136-Grafik-Atlas, 16 Metatiles, 16 Attribute und alle 16 Palettenbänke liegen unter `data/tilesets/secondary/cucharico/`. Das Tileset ist in den Engine-Datendateien registriert und dem Cucharico-Layout zugewiesen. Die 32×18-Testkarte verwendet sekundäre Metatile-IDs ab 512 (General enthält 512 Metatiles). Die Terrain-Attribute sind teilweise gesetzt (`MB_SHORT_GRASS`, `MB_SAND`, `MB_OCEAN_WATER`); 19 Fels-/Busch-Felder sind als blockierend markiert. Eine automatisierte Formatprüfung ist in [PORYMAP_PRUEFUNG.md](maps/PORYMAP_PRUEFUNG.md) dokumentiert. Porymap-GUI-, Build- und Emulator-Test fehlen.
