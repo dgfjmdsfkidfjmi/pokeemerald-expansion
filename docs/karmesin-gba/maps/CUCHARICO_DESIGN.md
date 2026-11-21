@@ -1,82 +1,54 @@
-# Cucharico – vollständiger GBA-Kartenentwurf
+# Cucharico – Kartendesign und technischer Stand
 
-Status: Design- und Bauplan mit erstem 32×18-Terrain-Prototyp im Engine-Layout; noch keine vollständige Dorfkarte und noch nicht in Porymap visuell geprüft.
+Status: Der ursprüngliche Designentwurf wurde als verbundener 32×18-Außenkarten-Prototyp umgesetzt. Die Porymap-GUI-Prüfung, der ROM-Build und der Emulator-Test stehen noch aus.
 
 ## Spielgefühl und Orientierung
-Cucharico ist ein kleines, sonniges Küstendorf. Der Spieler soll vom Haus aus den Dorfplatz sofort erkennen, Nemila dort finden und den Weg nach Norden zum Cucharico-Pfad sehen. Der Strand liegt südlich und westlich; Klippen und Palmen rahmen die Siedlung ein.
+
+Cucharico ist ein kleines, sonniges Küstendorf. Vom Spielerhaus aus soll der Dorfplatz sichtbar sein, Nemila wartet dort und der Weg nach Norden führt zum Cucharico-Pfad. Der Strand liegt im Süden; Felsen und Palmen rahmen die Siedlung.
 
 ## Technische Zielwerte
-- Außenkarte: **32 × 18 Metatiles** (16 × 16 Pixel pro Metatile).
+
+- Außenkarte: 32 × 18 Metatiles (16 × 16 Pixel pro Metatile).
 - Kamera: klassische GBA-Pokémon-Draufsicht.
-- Hauptmaterialien: sattes Küstengras, heller Sand, warmes Pflaster, türkisblaues Wasser, graubrauner Fels.
-- Die Karte wird in Porymap gebaut. Die Raster-Skizze ist kein Ersatz für Metatile-Grafiken oder Kollisionsdaten.
+- Hauptmaterialien: Küstengras, heller Sand, warmes Pflaster, türkisblaues Wasser und graubrauner Fels.
+- Tileset: eigenes sekundäres `gTileset_Cucharico`, kombiniert mit `gTileset_General`.
 
-## Zonenplan (Koordinaten ab links oben)
-| Zone | Bereich | Gestaltung / Funktion |
+## Zonen und Events
+
+| Zone | Bereich | Aktuelle Umsetzung |
 |---|---|---|
-| Nordausgang | x14–17, y0–2 | Wegöffnung zum Cucharico-Pfad; klare Wegkante |
-| Nordwest-Wohnviertel | x1–11, y2–7 | Spielerhaus mit Garten, Zaun und Briefkasten |
-| Nordost-Klippen | x20–30, y2–7 | Felsstufe, Palmen, Aussichtspunkt; nicht begehbare Begrenzung |
-| Dorfplatz | x11–21, y7–12 | Pflasterfläche, kleiner Brunnen/Blumenkreis, Nemila-Treffpunkt |
-| Westküste | x0–8, y8–15 | Sandstrand, Wasserlinie und kurzer Holzsteg |
-| Ostgasse | x22–29, y8–13 | Verbindung vom Platz zum Strand und zu einem Nachbarhaus |
-| Südstrand | x9–22, y13–16 | freie Sandfläche, Stranddetails, südlicher Küstenweg |
-| Südausgang | x14–18, y17 | Wegkante als späterer Anschluss; vorerst geschlossen/dekorativ |
+| Nordausgang | x 15–16, y 0–7 | Weg zum verbundenen Cucharico-Pfad |
+| Nordwest | x 3–7, y 2–6 | Spielerhausfassade mit Tür und Zaun |
+| Nordost | x 24–28, y 2–6 | zweite Hausfassade, Zaun und Vegetation |
+| Dorfplatz | x 11–20, y 8–10 | Steinfläche, Nemila bei (18, 9) |
+| Südstrand | y 11–14 | Sand, Weg, Schild und Uferkante |
+| Küste | y 15–17 | Wasserfläche und Felsrahmen |
 
-## Layout-Raster
-Legende: G Gras, P Pflasterweg, H Haus, D Tür, F Zaun, T Baum/Palme, R Fels, S Sand, W Wasser, N Nemila-Treffpunkt, B Dorfplatz-Detail, . freier Boden.
-
-```
-RRRRRRRRRRRRRRPPPP RRRRRRRRRRRR
-RGGFFFFGGGGGGGPPPP RRRRRRRRRRRR
-RGGHHDGGGGGGGGPPPP RRRRTTTTRRRR
-RGGGGGGGGGGGGGPPPP RRRRRRRRRRRR
-RGGTTGGGGGGGGGPPPP RRRRRRRRRRRR
-RGGTTGGGGGGGGGPPPP RRRRRRRRRRRR
-RGGGGGGGGGGGGGPPPP RRRRRRRRRRRR
-RGGGGGGGGGGPPPPPPPPPPPPGGGGGGGGR
-WWSSSSGGGGGPPPPPPPPPPPPGGTTGGGGR
-WWSSSSGGGGGPPPPPNPPPPPPGGGGGGGGR
-WWSSSSGGGGGPPPPPBPPPPPPGGGGGGGGR
-WWSSSSGGGGGPPPPPPPPPPPPGGGGGGGGR
-WWSSSSSSSSSSPPPPPPPPPPPPGGGGGGGR
-WWSSSSSSSSSSSSSSSSSSPPPPGGGGGGGR
-WWSSSSSSSSSSSSSSSSSSPPPPGGGGGGGR
-WWWWSSSSSSSSSSSSSSSSPPPPGGGGGGGR
-WWWWWWSSSSSSSSSSSSSSPPPPGGGGGGGR
-WWWWWWWWWWWWWWPPPPWWWWWWWWWWWWWW
-```
-
-**Raster-Hinweis:** Das Raster ist eine räumliche Kompositionshilfe. Vor Porymap-Import müssen alle Zeilen auf exakt 32 Zellen normalisiert und die Zonen anhand der Koordinatentabelle gesetzt werden. Die Leerzeichen dienen nur der Lesbarkeit und sind keine Tiles.
-
-## Interaktionspunkte
-- Spielerhaustür im Nordwesten: Warp in die separate Spielerhaus-Karte.
-- Nemila: im aktuellen Binär-Prototyp bei (18,9) auf dem gepflasterten Metatile 9; Dialogablauf und endgültige Platzierung müssen noch im Spiel getestet werden.
-- Dorfschild am nördlichen Weg: Name „Cucharico“ und kurzer Ortsgruß.
-- Strandschild am westlichen Strandzugang: kurzer Hinweis auf den Strand.
-- Nordausgang: Warp/Verbindung zum Cucharico-Pfad, sobald die Zielkarte existiert.
-- Strandzugang: frei begehbar, aber kein Story-Zwang.
+BG-Events: Dorfschild (18, 2), Strandschild (8, 12). Die Haustür liegt bei (5, 4) und führt in die separate Innenkarte.
 
 ## Kollisions- und Höhenregeln
-- Wasser, Felswände, Hauswände und Zäune blockieren.
-- Pflaster, Gras, Sand und Steg sind begehbar; Steg erhält eigene Wasser-/Kollisionskante.
-- Hausdach und dekorative Baumkronen werden als Overhead-Objekte behandelt.
-- Nemila steht auf einer begehbaren Boden-Metat tile mit passender Elevation; der aktuelle Eintrag nutzt Elevation 3 wie die Testkarte.
-- Warps liegen exakt vor Türen bzw. auf der markierten Nordöffnung.
 
-## Grafik- und Audioleitlinie
-- Keine Hoenn-Häuser oder Littleroot-Kulisse als finale Paldea-Grafik übernehmen.
-- Hausstil: weiß/cremefarbene Wände, terrakottafarbenes Dach, dunkle Fenster und dezente orangefarbene Details.
-- Vegetation: Palmen, niedrige Küstenbüsche, Blumen und wenige Schattenpixel.
-- Wasser: mehrere Ufer- und Wellen-Metatiles, nicht eine einfarbige Fläche.
-- Musik: später eine passende, eigens erstellte Paldea-inspirierte GBA-Komposition; bis dahin bleibt die Engine-Musik als Platzhalter markiert.
-
-## Abnahme vor „fertig“
-1. 32 × 18 Layout in Porymap angelegt und jede Rasterzeile geprüft.
-2. Metatiles, Kollisionswerte, Höhen und Warps gesetzt.
-3. Haus-Warp, Nordausgang, Schilder und Nemila-Position im Emulator geprüft.
-4. Keine Hoenn-Regionswerte oder Littleroot-Assets mehr in der finalen Paldea-Karte.
-5. Erfolgreicher ROM-Build dokumentiert.
+- Alle 576 Zellen der Außenkarte verwenden Elevation 3.
+- Wasser verwendet `MB_OCEAN_WATER`; Sand und Ufer verwenden `MB_SAND`.
+- Blumen-/Akzentgras verwendet `MB_SHORT_GRASS`; das Schild-Metatile verwendet `MB_SIGNPOST`.
+- Hauswände/-dach, Zaun, Felsen, Büsche, Palmen und Schilder sind über Mapgrid-Kollisionsbits blockiert.
+- Nemila steht auf einer begehbaren Steinfläche.
 
 ## Aktueller technischer Stand
-Die Map-Registrierung und ein erster Terrain-Aufbau in `map.bin` existieren. Die Binärdaten verwenden Gras-/Akzentgras-, Sand-, Weg-, Wasser-, Ufer-, Stein-, Fels- und Busch-Metatiles. Nemila ist auf das Pflaster bei (18,9) gesetzt. Die automatisierte Formatprüfung ist in [PORYMAP_PRUEFUNG.md](PORYMAP_PRUEFUNG.md) festgehalten. Ohne visuelle Porymap-Prüfung, Dorfarchitektur, gültige Paldea-Konstanten, verbundene Zielkarten und Build-Test ist Cucharico weiterhin nicht spielbar.
+
+- `Cucharico`: 32 × 18, 1.152 Byte `map.bin`, 76 blockierte Kartenfelder.
+- `Cucharico_Path`: 32 × 24, 1.536 Byte `map.bin`, 60 blockierte Kartenfelder; mit Cucharico verbunden.
+- `Cucharico_PlayerHouse`: 11 × 9, eigene Kartenregistrierung und Rückwarp. Das Innenlayout ist noch eine Kopie der Hoenn-Spielerhauseinrichtung.
+- Eigenes indiziertes 4-bpp-Tileset mit 16 Metatiles und 16 gleichartigen Paletten-Dateien liegt im Repository.
+
+Die automatisierte technische Vorprüfung steht in [PORYMAP_PRUEFUNG.md](PORYMAP_PRUEFUNG.md).
+
+## Noch offene Punkte
+
+- Porymap-GUI- und Emulatorprüfung von Grafik, Kollision, Höhen, Events und Kartenverbindungen.
+- Eigenes Paldea-Interieur für das Spielerhaus.
+- Eigenes Nemila-Sprite.
+- Paldea-Region-/Kartenabschnittswerte und passende Musik.
+- Trainer, Wildbegegnungen und weitere Story-Events auf dem Cucharico-Pfad.
+
+**Wichtig:** Die Karten sind technisch registrierte Prototypen. Ohne erfolgreichen Build und Emulatorprüfung werden sie nicht als fertige spielbare Karten bezeichnet.
