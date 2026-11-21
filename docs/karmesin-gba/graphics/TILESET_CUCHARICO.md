@@ -129,9 +129,10 @@ Die Motive sind eine eigenständige Annäherung an den klassischen Gen-3-GBA-Pix
 Ein erstes Set aus 16 Metatiles sowie 2-Byte-Attributen liegt im Engine-Verzeichnis.
 Das Tileset ist in `graphics.h`, `metatiles.h` und `headers.h` registriert und dem
 Cucharico-Layout zugewiesen. Die 32×18-Testkarte enthält erste Terrainflächen.
-Die Attribute stehen vorläufig alle auf normal/begehbar; Wasser, Felsen und Gebäude
-haben daher noch keine korrekte Kollision. Porymap-Prüfung, visuelle Nacharbeit,
-Build-Test und Emulator-Test fehlen weiterhin.
+Die Attribute sind teilweise gesetzt: Gras-/Blumen-Metatile mit `MB_TALL_GRASS`,
+Sand/Ufer mit `MB_SAND`, Wasser mit `MB_OCEAN_WATER`. In der 32×18-Testkarte sind
+19 Fels-/Busch-Felder über die Mapgrid-Kollisionsbits blockiert. Porymap-Prüfung,
+visuelle Nacharbeit, Build-Test und Emulator-Test fehlen weiterhin.
 
 ## Status
 
@@ -140,10 +141,10 @@ Build-Test und Emulator-Test fehlen weiterhin.
 - [x] Erster indizierter 8×8-Grafik-Prototyp erstellt
 - [x] Atlas im klassischen Gen-3-GBA-Stil überarbeitet (Nacharbeit offen)
 - [x] Alle 16 GBA-Palettenbänke angelegt (Porymap-/Build-Prüfung offen)
-- [x] Erste 16 Metatiles und Attribute als Binär-Prototyp erstellt (Kollision noch offen)
+- [x] Erste 16 Metatiles und 2-Byte-Attribute als Binär-Prototyp erstellt (Terrain-Verhalten eingetragen; Spieltest offen)
 - [x] Tileset in den Engine-Datendateien registriert
 - [x] Cucharico-Layout auf das neue Tileset umgestellt und erste 32×18-Terrain-Testkarte aufgebaut
-- [ ] Cucharico in Porymap prüfen und optisch verfeinern
+- [ ] Cucharico in Porymap prüfen und optisch verfeinern; Kollision kontrollieren
 - [ ] ROM-Build und Emulator-Test
 
 **Wichtig:** Das Tileset ist technisch eingebunden, aber noch nicht kompiliert oder im Spiel geprüft. Die Testkarte ist ein erster Terrain-Aufbau und noch keine fertige Dorfkarte.
