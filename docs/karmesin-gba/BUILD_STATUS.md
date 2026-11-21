@@ -13,9 +13,12 @@ Ein privates, deutschsprachiges Pokémon-Karmesin-inspiriertes GBA-Spiel auf Bas
 - Das Anfangsgebiet und der geplante Ablauf der Starterwahl sind beschrieben.
 - Cucharico besitzt einen Lage-/Koordinatenentwurf.
 
-### Cucharico – erste technische Einträge
-- Map-JSON und Map-Gruppen-Eintrag sind vorhanden.
-- Layout-ID und 32×18-Layoutdateien sind angelegt.
+### Cucharico – erster Tileset- und Kartenprototyp
+- Eigenes sekundäres Tileset `gTileset_Cucharico` in `graphics.h`, `metatiles.h` und `headers.h` registriert.
+- 16 Palette-Bänke angelegt; Bank 6 enthält die verwendeten Cucharico-Farben.
+- 16 Metatiles mit acht Einträgen pro Metatile und 16 Attributwerten erstellt.
+- Cucharico-Layout auf das eigene Tileset umgestellt.
+- 32×18-Karte mit Gras, Blumen, Weg, Sand, Ufer und Wasser aufgebaut; sekundäre Metatiles beginnen nach den 512 General-Metatiles bei ID 512.
 - Zwei Schild-Events sind in den Map-Daten und Skripten eingetragen.
 - Nemila ist als NPC-Eintrag mit einem ersten Dialog vorhanden.
 
