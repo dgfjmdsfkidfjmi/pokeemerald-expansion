@@ -44,4 +44,4 @@ Eine Änderung gilt erst dann als spielbar, wenn die relevanten Daten generiert,
 
 ## Grafik – Cucharico
 
-Die Tileset-Spezifikation und Produktionsreihenfolge stehen in [TILESET_CUCHARICO.md](graphics/TILESET_CUCHARICO.md). Die Konzeptgrafik ist noch nicht als GBA-Tileset eingebunden; Grafik-Tiles, Paletten, Metatiles und Attribute sind weiterhin offen.
+Die Tileset-Spezifikation und Produktionsreihenfolge stehen in [TILESET_CUCHARICO.md](graphics/TILESET_CUCHARICO.md). Ein verbesserter, indizierter 128×128-Grafik-Atlas im Gen-3-inspirierten GBA-Stil liegt unter `graphics/tilesets/cucharico/tiles.png`. Er ist weiterhin ein Grafik-Prototyp: Metatiles, geprüfte Spielpaletten, Attribute, Engine-Registrierung und Porymap-Test fehlen.
