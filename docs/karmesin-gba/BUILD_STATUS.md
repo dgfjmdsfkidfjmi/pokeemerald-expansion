@@ -20,6 +20,7 @@ Ein privates, deutschsprachiges Pokémon-Karmesin-inspiriertes GBA-Spiel auf Bas
 - `LAYOUT_CUCHARICO`: 32 × 18 Metatiles, 576 Kartenfelder, alle auf Elevation 3.
 - Eigener Kartenaufbau mit zwei Hausfassaden, Garten-Zäunen, Palmen, Büschen, Dorfplatz, Nemila-Treffpunkt, Weg, Strand, Ufer und Wasser.
 - 76 Kartenfelder sind über Mapgrid-Kollisionsbits blockiert.
+- Für Test-ROMs startet ein neues Spiel direkt auf dem Dorfplatz bei (15, 10), damit Cucharico ohne Debug-Menü erreichbar ist.
 - Haustür bei (5, 4) führt in die Spielerhaus-Karte.
 - Dorfschild bei (18, 2), Strandschild bei (8, 12), jeweils mit deutschem Text.
 - Nemila steht bei (18, 9) auf dem gepflasterten Platz. Sie verwendet noch ein Platzhalter-Sprite.
