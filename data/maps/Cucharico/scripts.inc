@@ -31,11 +31,11 @@ Cucharico_Text_Nemila_Intro:
 	.string "Ich habe schon auf dich gewartet.$"
 
 Cucharico_Text_Nemila_Paldea:
-	.string "Willkommen in PALDEA!\\p"
+	.string "Willkommen in PALDEA!\p"
 	.string "Hier gibt es so viel zu entdecken.\n"
 	.string "Ich kann es kaum erwarten, mit dir loszuziehen!$"
 
 Cucharico_Text_Nemila_Friend:
-	.string "Ach ja, ich bin NEMILA!\\p"
+	.string "Ach ja, ich bin NEMILA!\p"
 	.string "Ich liebe Pokemon-Kaempfe. Wenn du\n"
 	.string "magst, koennen wir bald zusammen trainieren!$"
