@@ -41,3 +41,7 @@ Ein privates, deutschsprachiges Pokémon-Karmesin-inspiriertes GBA-Spiel auf Bas
 
 ## Qualitätsregel
 Eine Änderung gilt erst dann als spielbar, wenn die relevanten Daten generiert, die ROM erfolgreich gebaut und die Szene im Emulator geprüft wurde. Dokumentation und eingetragene Platzhalter werden nicht als fertige Spielinhalte bezeichnet.
+
+## Grafik – Cucharico
+
+Die Tileset-Spezifikation und Produktionsreihenfolge stehen in [TILESET_CUCHARICO.md](graphics/TILESET_CUCHARICO.md). Die Konzeptgrafik ist noch nicht als GBA-Tileset eingebunden; Grafik-Tiles, Paletten, Metatiles und Attribute sind weiterhin offen.
