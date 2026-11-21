@@ -25,7 +25,7 @@ Ein privates, deutschsprachiges Pokémon-Karmesin-inspiriertes GBA-Spiel auf Bas
 - Nemila steht bei (18, 9) auf dem gepflasterten Platz. Sie verwendet noch ein Platzhalter-Sprite.
 
 ### Verbundene Karten
-- `Cucharico_Path`: 32 × 24 Metatiles, mit Cucharico nach Norden verbunden; Rückverbindung nach Süden. 60 Felder sind als Hindernisse markiert.
+- `Cucharico_Path`: 32 × 24 Metatiles, mit Cucharico nach Norden verbunden; Rückverbindung nach Süden. 61 Felder sind als Hindernisse markiert; ein Wegweiser erklärt den Wegverlauf.
 - `Cucharico_PlayerHouse`: eigene 11 × 9-Innenkarte mit Rückwarp nach Cucharico und einem einfachen Mutter-NPC.
 - **Wichtiger Platzhalter:** Die Binärkarte des Spielerhauses wurde vorläufig aus `LittlerootTown_BrendansHouse_1F` kopiert. Die Innenausstattung ist deshalb noch Hoenn-Stil und muss durch eine eigene Paldea-Innenkarte ersetzt werden.
 
