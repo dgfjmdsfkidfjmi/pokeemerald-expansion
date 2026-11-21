@@ -9330,7 +9330,7 @@
       "width": 32,
       "height": 18,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Cucharico",
       "border_filepath": "data/layouts/Cucharico/border.bin",
       "blockdata_filepath": "data/layouts/Cucharico/map.bin",
       "layout_version": "emerald"
