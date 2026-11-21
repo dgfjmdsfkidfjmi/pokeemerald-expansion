@@ -1,7 +1,7 @@
 {
   "id": "MAP_CUCHARICO",
   "name": "Cucharico",
-  "layout": "LAYOUT_LITTLEROOT_TOWN",
+  "layout": "LAYOUT_CUCHARICO",
   "music": "MUS_LITTLEROOT",
   "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
