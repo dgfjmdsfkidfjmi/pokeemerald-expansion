@@ -2,7 +2,7 @@
 
 Branch: `private-karmesin-gba`
 
-**Status:** Layout-Entwurf, noch keine importierten Porymap-Karten. Die Raster unten legen Wegeführung und Übergänge fest. Für spielbare Karten fehlen noch passende Tilesets, Metatiles, Kollisionsdaten, Layout-IDs und die Registrierung in der Map-Gruppen-Datei.
+**Status:** Die Raster unten sind weiterhin Entwürfe. Cucharico besitzt inzwischen einen ersten 32×18-Terrain-Binärprototyp mit registriertem Tileset und Layout, aber noch keine Porymap-visuell geprüfte oder spielbare Karte. Spielerhaus, Cucharico-Pfad und Inlet-Grotte sind weiterhin Entwürfe; für spielbare Verbindungen fehlen Karten, Warps und Tests.
 
 ## Legende
 - `G` Gras / begehbares Gelände
@@ -33,7 +33,9 @@ Branch: `private-karmesin-gba`
 
 Ziel: Start im eigenen Zimmer im Obergeschoss; Treppe führt ins Erdgeschoss. Die Haustür führt nach Cucharico. Möbel und Treppe benötigen eigene Metatiles und Kollisionswerte.
 
-## 2. Cucharico (Außenkarte, 32 × 24)
+## 2. Cucharico – ältere räumliche Skizze (Außenkarte, 32 × 24)
+
+Hinweis: Diese Skizze ist ein früherer Konzeptentwurf. Der aktuelle Terrain-Binärprototyp ist 32 × 18 Metatiles groß und wird separat in `maps/CUCHARICO_UMSETZUNG.md` dokumentiert.
 
 ```
 TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
