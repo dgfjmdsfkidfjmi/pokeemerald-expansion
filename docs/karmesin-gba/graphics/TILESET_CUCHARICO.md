@@ -111,10 +111,12 @@ in Porymap getestet werden kann.
 
 ## Erster Grafik-Prototyp (eingetragen)
 
-Datei: `graphics/tilesets/cucharico/tiles.png`
+Quelldatei: `graphics/tilesets/cucharico/tiles.png`
+Engine-Datei: `data/tilesets/secondary/cucharico/tiles.png`
 
 - PNG mit indizierter 4bpp-Farbgebung und 16 Einträgen in der Palette
-- 128×128 Pixel, also ein Raster von 16×16 Grafik-Tiles à 8×8 Pixel
+- 128×136 Pixel: 16×16 gestaltete Grafik-Tiles plus eine transparente Tile-Zeile
+  als Overlay-Leerfläche (Tile-ID 256)
 - Enthält einen überarbeiteten, handgezeichneten Gen-3-inspirierten Atlas:
   Grasvarianten, Sand, Wasser/Wellen, Ufer, Wege, Felsen, Vegetation,
   Baumstammsegmente, Dach-/Wandfragmente sowie kleine Dekorationen
