@@ -5,84 +5,91 @@ Branch: `private-karmesin-gba`
 
 ## Ergebnis und Umfang
 
-Die Dateien wurden direkt aus dem Branch geprüft. Das ist eine automatisierte Prüfung der exportierten Daten – **keine bestätigte Ansicht in Porymap**. In der verfügbaren Arbeitsumgebung sind Porymap und die GBA-Build-Werkzeuge nicht installiert.
+Die exportierten Daten wurden automatisiert gegen die Engine-Formate geprüft. Das ist **keine bestätigte Ansicht in der Porymap-GUI**. Porymap selbst und die GBA-Build-Werkzeuge waren in dieser Arbeitsumgebung nicht verfügbar.
 
-## Layout und Kartenraster
+## Außengebiet Cucharico
 
-- `LAYOUT_CUCHARICO` ist in `data/layouts/layouts.json` registriert.
-- Größe: 32 × 18 Metatiles, Layoutversion `emerald`.
-- Primäres Tileset: `gTileset_General`; sekundäres Tileset: `gTileset_Cucharico`.
+- Layout: `LAYOUT_CUCHARICO`, 32 × 18 Metatiles.
+- Tilesets: primär `gTileset_General`, sekundär `gTileset_Cucharico`.
 - `map.bin`: 1.152 Byte = 576 16-Bit-Zellen.
-- Alle 576 Zellen verwenden Elevation 3.
-- Alle verwendeten globalen Metatile-IDs liegen zwischen 512 und 522; das passt zum sekundären Tileset nach den 512 primären General-Metatiles.
+- Alle 576 Kartenfelder verwenden Elevation 3.
+- Sekundäre Metatile-IDs: 512–527. Die Haustür verwendet primär `METATILE_General_Door` (ID 33).
+- 76 Kartenfelder tragen Mapgrid-Kollisionsbits, unter anderem Hauswände/-dach, Zäune, Felsen, Palmen, Büsche und Schilder.
 - `border.bin`: 8 Byte = vier 16-Bit-Randzellen.
 
-### Rastervorschau der gespeicherten Metatile-IDs
+### Rastervorschau
 
-Die Zeichen zeigen nur die Metatile-Kategorien, nicht die Pixelgrafik:
+Die Buchstaben zeigen die gespeicherten Metatile-Kategorien, nicht die Pixelgrafik:
 
 ```
 GGGGGGGGGGGGGGGPPGGGGGGGGGGGGGGG
 GGGGGGGGGGGGGGGPPGGGGGGGGGGGGGGG
-GGGGGGGGGGGGGGGPPGGGGGGGGGGGGGGG
-GGGGGGGFGGGGGGGPPGGGGGGGGGGGGGGG
-GGGGGGGGGGGGGGGPPGGGGGGGGBGGGGGG
-GGGGGBGGGGGGGGGPPGGGGGGGGGGGGGGG
-GGGGGGGGGGGGGGGPPGGGGGGFGGGGGGGG
-GGGGGGGGBGGGGGGPPGGGGGGGGGGGGGGG
-GGGGGGGGGGFGCCCCCCCCGGGGGGGBGGGG
-GGGBGGGGGGGGCCCCCCCCGGGGGGGGGGGG
-GGGGGGGGGGGGGGGPGGGGGGGGGGGGGGGG
-RSSSSSSSSSSSSSSPPSSSSSSSSSSSSSSR
-RSSSSSSSSSSSSSSPPSSSSSSSSSSSSSSR
-RSSSSSSSSSSSSSSPPSSSSSSSSSSSSSSR
-RUUUUUGUUUUUUUUUUUUUUUUUUUUUUUUR
-RWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWR
-RWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWR
-RWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWR
+GGGGGGGGGGGGGGGPPGGGGGGGGGGSGGGG
+GGGFFFFFFFFGPPPPGGGGGGGGGGGGGGGGG
+GGGFRF GGGGPPPPGGGGGGGGGGGGGGGGGG
+GGGBGGGGGGGPPPPGGGGGGGGGGGGGGGGGG
+GGGGGGGGGGGPPPPGGGGGGGGGGGGGGGGGG
+GGGGGPPPPPPPPPPPPPPPPPPGGGGGGGGGGG
+GGGGGGGGGGGCCCCCCCCCCGGGGGGGGGGGGG
+GGGGGGGGGGGCCCCCCCCCCGGGGGGGGGGGGG
+GGGGGGGGGGGCCCCCCCCCCGGGGGGGGGGGGG
+RSSSSSSSSSSSSPPSSSSSSSSSSSSSSSSR
+RSSSSSSSSSSSSPPSSSSSSSSSSSSSSSSR
+RSSSSSSSSSSSSPPSSSSSSSSSSSSSSSSR
+RUUUUUUUUUUUUPPUUUUUUUUUUUUUUUUR
+RWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWR
+RWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWR
+RWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWR
 ```
 
-Legende: G = Gras, F = Blumen-/Akzentgras, S = Sand, P = Erdweg, U = Ufer, W = Wasser, R = Fels, C = Steinfläche, B = Busch.
+Legende: G = Gras, F = Blumen-/Akzentgras, S = Sand, P = Weg, U = Ufer, W = Wasser, R = Fels, C = Dorfplatz. Haus-/Deko-Metatiles sind in dieser kompakten Textvorschau nicht eigens dargestellt.
 
-## Tileset und Metatiles
+## Eigenes Tileset
 
-- `tiles.png`: 128 × 136 Pixel, indiziertes PNG mit 4 Bit pro Pixel und 272 Grafik-Tiles.
-- Quelldatei und Engine-Datei besitzen denselben Git-Blob-SHA; es liegen daher aktuell identische PNG-Inhalte vor.
-- `metatiles.bin`: 256 Byte = 16 Metatiles × 8 16-Bit-Einträge.
-- Jeder verwendete Grafik-Tile-Verweis liegt im Bereich 0–257 und damit innerhalb der 272 vorhandenen Grafik-Tiles.
-- Alle Metatile-Einträge verwenden Palettenbank 6.
-- Die 16 Palettendateien im Engine-Verzeichnis haben derzeit identischen Inhalt; eigenständige alternative Farbpaletten sind noch nicht erstellt.
-- Tile-IDs 256 und 257 stammen aus der transparent angelegten zusätzlichen Atlaszeile und werden als leere obere Ebene verwendet.
+- Quelldatei und Engine-Datei: `graphics/tilesets/cucharico/tiles.png` und `data/tilesets/secondary/cucharico/tiles.png`; beide verwenden denselben Inhalt.
+- PNG: 128 × 136 Pixel, indiziert, 4 Bit pro Pixel, 272 Grafik-Tiles.
+- `metatiles.bin`: 256 Byte = 16 Metatiles × 8 Einträge.
+- Alle Metatile-Grafikeinträge verwenden Palettenbank 6.
+- Die Metatile-Grafikverweise liegen zwischen Tile-ID 0 und 256; sie liegen damit innerhalb der 272 Grafik-Tiles. Tile-ID 256 ist die transparente obere Ebene.
+- Die 16 Palettendateien im Engine-Verzeichnis verwenden dieselbe neue 16-Farben-Palette.
 
-## Attribute und Kollision
+### Metatile-Verhalten
 
-`metatile_attributes.bin` enthält 16 Einträge zu je 2 Byte. Eingetragen sind:
+`metatile_attributes.bin` ist 32 Byte groß (16 Einträge × 2 Byte).
 
-| Lokale Metatile-ID | Verwendung | Verhalten |
+| Lokale ID | Motiv | Verhalten |
 |---:|---|---|
 | 0 | Grundgras | `MB_NORMAL` |
 | 2 | Blumen-/Akzentgras | `MB_SHORT_GRASS` |
 | 3 | Sand | `MB_SAND` |
 | 4 | Erdweg | `MB_NORMAL` |
-| 5 | Wasser | `MB_OCEAN_WATER` |
+| 5 und 6 | Wasser | `MB_OCEAN_WATER` |
 | 7 | Ufer | `MB_SAND` |
+| 8, 10–14 | Fels, Busch, Architektur und Palme | `MB_NORMAL`; einzelne Kartenfelder werden über Mapgrid-Kollisionsbits blockiert |
+| 15 | Schild | `MB_SIGNPOST` |
 
-Die übrigen Metatile-Attribute stehen weiterhin auf `MB_NORMAL`. Für Fels (lokale ID 8) und Busch (lokale ID 10) sind 19 einzelne Kartenfelder über die Mapgrid-Kollisionsbits als blockierend markiert: 14 Felsfelder und 5 Buschfelder. Die Kollision muss trotzdem in Porymap und anschließend im Spiel bestätigt werden.
+## Verbundene Karten
+
+- `MAP_CUCHARICO` ist nach Norden mit `MAP_CUCHARICO_PATH` verbunden.
+- `LAYOUT_CUCHARICO_PATH`: 32 × 24 Metatiles; `map.bin` ist 1.536 Byte groß; alle Felder verwenden Elevation 3; 60 Felder sind über Mapgrid-Kollisionsbits blockiert.
+- Der Pfad verbindet sich nach Süden zurück mit Cucharico.
+- Die Haustür bei (5, 4) führt auf `MAP_CUCHARICO_PLAYER_HOUSE`; die Innenkarte führt bei (9, 8) zurück.
+- Das Haus-Innenlayout ist 11 × 9. Seine Binärkarte wurde vorläufig von `LittlerootTown_BrendansHouse_1F` kopiert und verwendet daher noch die vorhandene Hoenn-Inneneinrichtung. Sie ist ein Platzhalter, keine fertige Paldea-Innenarchitektur.
 
 ## Events
 
-- Nemila steht in `map.json` bei (18, 9), Elevation 3. Das Kartenfeld dort verwendet lokale Metatile-ID 9 (Steinfläche).
-- Die beiden Schild-Skripte sind als BG-Events eingetragen: (16, 10) und (6, 14).
-- Die BG-Event-Koordinaten und die sichtbaren Schildgrafiken müssen beim visuellen Porymap-Durchgang gemeinsam kontrolliert werden.
+- Nemila steht bei (18, 9), Elevation 3, auf dem gepflasterten Metatile 9.
+- Das Dorfschild liegt bei (18, 2), das Strandschild bei (8, 12); beide verwenden das Schild-Metatile 15.
+- Die Haus-Warps und die Nordverbindung sind in den Map-JSON-Dateien eingetragen.
 
 ## Noch offene manuelle Porymap-Prüfung
 
-1. Cucharico-Layout öffnen und prüfen, ob Tileset, Palette 6 und Metatile-Zusammensetzung korrekt dargestellt werden.
-2. Transparente obere Ebene sowie Gras-/Sand-/Ufer-/Wasserübergänge visuell kontrollieren.
-3. Fels und Busch blockierend, Weg/Gras/Sand begehbar und Wasser für den Spieler an Land nicht betretbar prüfen.
-4. Nemilas Position sowie die beiden BG-Events und ihre sichtbaren Schilder kontrollieren.
-5. Nach manuellen Änderungen die Karten-/Layoutdaten speichern und die Änderungen erneut gegen das Repository prüfen.
+1. Alle drei Layouts öffnen und die Tile-Zuordnung, Paletten, Ebenen und Metatile-Zusammensetzung visuell kontrollieren.
+2. Nahtlose Wiederholungen und Übergänge zwischen Gras, Weg, Sand, Ufer und Wasser prüfen.
+3. Kollisionen von Wasser, Felsen, Büschen, Palmen, Hauswänden, Dach, Zaun und Schildern im Karteneditor testen.
+4. Haus-Warp, Rückwarp, Nordverbindung, Nemila und beide Schilder im Spiel testen.
+5. Das wiederverwendete Hoenn-Hausinnere später durch eine eigene Paldea-Innenkarte ersetzen.
 
 ## Build- und Emulatorstatus
 
-Porymap, `arm-none-eabi-gcc`, `arm-none-eabi-objcopy` und `agbcc` waren in der verfügbaren Umgebung nicht vorhanden. Deshalb wurde weder eine Porymap-GUI-Prüfung noch ein ROM-Build oder Emulator-Test durchgeführt. Cucharico bleibt ein technischer Terrain-Prototyp und ist noch keine bestätigte spielbare Karte.
+Eine ROM wurde noch nicht gebaut. Porymap-GUI und Emulator-Test wurden nicht ausgeführt. Die Karten sind technisch registrierte Prototypen, aber noch keine bestätigte spielbare Veröffentlichung.
