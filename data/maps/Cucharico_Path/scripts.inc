@@ -7,4 +7,4 @@ Cucharico_Path_EventScript_PathSign::
 
 Cucharico_Path_Text_PathSign:
 	.string "CUCHARICO-PFAD\n"
-	.string "Der Weg fuehrt weiter ins Landesinnere.$
+	.string "Der Weg fuehrt weiter ins Landesinnere.$"
