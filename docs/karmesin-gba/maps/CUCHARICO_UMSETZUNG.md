@@ -1,6 +1,6 @@
 # Cucharico – Umsetzungsplan für die erste echte Spielkarte
 
-Status: Kartenregistrierung vorhanden; Layoutgrafik und Verbindungen sind noch Platzhalter – noch keine spielbare Karte.
+Status: Kartenregistrierung und erster 32×18-Terrain-Prototyp vorhanden; Porymap-/Build-Prüfung, Dorfarchitektur und Verbindungen fehlen – noch keine spielbare Karte.
 
 ## Ziel
 Die erste Paldea-Karte wird als eigenständige Außenkarte im Emerald-Engine-Format angelegt. Der Ortsname im Spiel lautet **Cucharico**. Die Karte soll eine kleine Küstensiedlung mit südlichem Strand, zentralem Dorfplatz und nördlichem Ausgang zum Cucharico-Pfad werden.
@@ -37,7 +37,7 @@ Koordinatenursprung: oben links (0,0).
 ## Event- und Warp-Entwurf
 - Warp am Nordausgang führt später auf den Cucharico-Pfad.
 - Ein Haus-Warp führt in die separate Spielerhaus-Karte.
-- Nemila steht zunächst am Dorfplatz; ihr Intro-Event wird erst nach Fertigstellung der Kartenverknüpfungen eingebaut.
+- Nemila steht im aktuellen Prototyp auf dem Pflaster bei (18, 9); Dialog und endgültige Position müssen im Spiel getestet werden.
 - Schilder am Dorfeingang und beim Strand erhalten kurze deutsche Orts-/Hinweistexte.
 - Keine Trainerkämpfe auf dieser ersten Karte.
 
@@ -51,18 +51,19 @@ Die verbindliche visuelle Referenz ist **Bild 1**. Die technische Tileset-Spezif
 
 ## Tatsächlicher Zwischenstand auf `private-karmesin-gba`
 - `map.json`, `scripts.inc`, Map-Gruppen-Eintrag und `LAYOUT_CUCHARICO` sind angelegt.
-- Das Layout ist 32 × 18 Metatiles groß, aber `map.bin` besteht derzeit nur aus demselben Platzhalter-Metatile `0x0130` an jeder Position. Das ergibt noch kein gestaltetes Dorf.
-- Die beiden Schild-Events und Nemilas NPC-/Dialogeintrag sind vorhanden. Nemilas Position und Höhe müssen nach dem echten Layout geprüft werden.
+- Das Layout ist 32 × 18 Metatiles groß. `map.bin` enthält einen ersten Terrain-Testaufbau mit Gras, Akzentgras, Sand, Weg, Wasser, Ufer, Steinfläche, Felsen und Büschen. Verwendet werden sekundäre Metatile-IDs 512–522; die Datei enthält 576 16-Bit-Zellen (1.152 Byte). Es ist noch kein gestaltetes Dorf mit Häusern oder vollständiger Küstenlinie.
+- Die beiden Schild-Events und Nemilas NPC-/Dialogeintrag sind vorhanden. Nemila steht nun bei (18, 9) auf Metatile 9 (Steinplatz); das muss noch visuell und im Spiel bestätigt werden.
 - Die Karte verwendet vorläufig Hoenn/Littleroot-Regiondaten und Littleroot-Musik. Diese Werte sind ausdrücklich Platzhalter und müssen durch gültige Paldea-Konstanten bzw. passende Musik ersetzt werden, sobald sie im Projekt definiert sind.
 - Es gibt noch keine Warps oder Kartenverbindungen. Cucharico ist daher noch nicht mit Spielerhaus oder Cucharico-Pfad verbunden.
 - Die aktuelle Nemila-Grafik ist `OBJ_EVENT_GFX_GIRL_3`; das ist nur ein Platzhalter, kein eigenes Nemila-Sprite.
-- Es wurde kein ROM-Build und kein Emulator-Test durchgeführt.
+- Der Binärstand wurde automatisiert auf Dateigrößen, Metatile-IDs, Grafik-Tile-Referenzen, Palette und Elevation geprüft. Porymap-GUI, ROM-Build und Emulator-Test wurden nicht ausgeführt; Details stehen in [PORYMAP_PRUEFUNG.md](PORYMAP_PRUEFUNG.md).
 
 ## Noch notwendige technische Arbeit
-1. Eigenes Paldea-Tileset bzw. zulässige, passende Basis-Metatiles festlegen.
-2. Layout in Porymap anlegen und die Binärdateien erzeugen.
-3. Layout-Definition und Map-Gruppe nach den Generator-Konventionen registrieren.
-4. Map-JSON, Warps, NPCs und Skripte ergänzen.
-5. ROM mit der passenden GBA-Toolchain bauen und Karte im Emulator testen.
+1. Layout und Tileset in Porymap öffnen; Darstellung, Paletten, obere Ebene, Uferübergänge und Kollisionen visuell prüfen.
+2. Dorfarchitektur, Häuser, Zäune, Palmen, Steg und sichtbare Schilder ergänzen.
+3. Spielerhaus und Cucharico-Pfad als eigene Karten anlegen und Warps/Verbindungen eintragen.
+4. Paldea-Regions-/Kartenabschnittswerte und passende Musik definieren.
+5. Nemila-Sprite sowie NPC-Position/Dialog prüfen.
+6. ROM mit der passenden GBA-Toolchain bauen und Karte im Emulator testen.
 
 **Wichtig:** Bis Schritt 5 abgeschlossen ist, ist Cucharico ein Entwurf und keine im Spiel erreichbare Karte.
