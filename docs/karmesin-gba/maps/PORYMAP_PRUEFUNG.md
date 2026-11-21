@@ -71,8 +71,9 @@ Legende: G = Gras, F = Blumen-/Akzentgras, S = Sand, P = Weg, U = Ufer, W/w = Wa
 ## Verbundene Karten
 
 - `MAP_CUCHARICO` ist nach Norden mit `MAP_CUCHARICO_PATH` verbunden.
-- `LAYOUT_CUCHARICO_PATH`: 32 × 24 Metatiles; `map.bin` ist 1.536 Byte groß; alle Felder verwenden Elevation 3; 60 Felder sind über Mapgrid-Kollisionsbits blockiert.
+- `LAYOUT_CUCHARICO_PATH`: 32 × 24 Metatiles; `map.bin` ist 1.536 Byte groß; alle Felder verwenden Elevation 3; 61 Felder sind über Mapgrid-Kollisionsbits blockiert. Ein Wegweiser bei (18, 2) trägt den Text „CUCHARICO-PFAD“.
 - Der Pfad verbindet sich nach Süden zurück mit Cucharico.
+- Das Schild-Event am Wegweiser liegt bei (18, 2).
 - Die Haustür bei (5, 4) führt auf `MAP_CUCHARICO_PLAYER_HOUSE`; die Innenkarte führt bei (9, 8) zurück.
 - Das Haus-Innenlayout ist 11 × 9. Seine Binärkarte wurde vorläufig von `LittlerootTown_BrendansHouse_1F` kopiert und verwendet daher noch die vorhandene Hoenn-Inneneinrichtung. Sie ist ein Platzhalter, keine fertige Paldea-Innenarchitektur.
 
