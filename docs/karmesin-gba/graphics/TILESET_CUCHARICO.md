@@ -36,10 +36,13 @@ Zuordnung wird erst festgelegt, wenn die Grafik in Porymap geprüft wurde.
 ### GBA-Raster
 
 - Grafik-Tiles: 8×8 Pixel
-- Metatiles: 16×16 Pixel, aus vier Grafik-Tiles zusammengesetzt
+- Metatile-Motiv: 16×16 Pixel pro Ebene, aus vier Grafik-Tiles zusammengesetzt
+- Emerald verwendet zwei Ebenen und damit acht 8×8-Tilemap-Einträge pro Metatile
 - Farbpalette: GBA-kompatible 4bpp-Paletten mit höchstens 16 Farben je Bank
-- Metatile-Attribute: separat festlegen (Boden, Wasser, Hindernis,
-  Durchgang, Höhen-/Verhaltenstyp)
+- Metatile-Attribute: in Emerald 2 Byte pro Metatile; Verhalten liegt in Bit 0–7,
+  Ebenentyp in Bit 12–15
+- Tilemap-Einträge sind 16-Bit-Werte; neben der Tile-ID werden Flip- und
+  Palettenbank-Informationen gespeichert
 
 Die Konzeptgrafik muss vor dem Import neu gezeichnet bzw. pixelgenau
 aufbereitet werden. Sie enthält unterschiedlich große Illustrationen,
