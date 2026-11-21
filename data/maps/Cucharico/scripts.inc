@@ -38,4 +38,4 @@ Cucharico_Text_Nemila_Paldea:
 Cucharico_Text_Nemila_Friend:
 	.string "Ach ja, ich bin NEMILA!\p"
 	.string "Wir werden bestimmt eine Menge Spaß\n"
-	.string "zusammen haben. Auf ins Abenteuer!$"
+	.string "zusammen viel erleben. Auf ins Abenteuer!$"
