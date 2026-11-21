@@ -10,9 +10,9 @@ Cucharico_EventScript_BeachSign::
 	end
 
 Cucharico_Text_VillageSign:
-	.string "CUCHARICO\\n"
+	.string "CUCHARICO\n"
 	.string "A quiet village by the sea.$"
 
 Cucharico_Text_BeachSign:
-	.string "BEACH\\n"
+	.string "BEACH\n"
 	.string "Please keep the coast clean.$"
