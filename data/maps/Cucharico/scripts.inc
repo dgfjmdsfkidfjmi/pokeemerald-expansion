@@ -27,7 +27,7 @@ Cucharico_EventScript_Nemila::
 	end
 
 Cucharico_Text_Nemila_Intro:
-	.string "Hey! Du bist also auch hier!\n"
+	.string "Hey! Da bist du ja!\n"
 	.string "Ich habe schon auf dich gewartet.$"
 
 Cucharico_Text_Nemila_Paldea:
@@ -37,5 +37,5 @@ Cucharico_Text_Nemila_Paldea:
 
 Cucharico_Text_Nemila_Friend:
 	.string "Ach ja, ich bin NEMILA!\p"
-	.string "Wir werden bestimmt eine Menge Spaß\n"
-	.string "zusammen viel erleben. Auf ins Abenteuer!$"
+	.string "Ich liebe Pokémon-Kämpfe. Wenn du\n"
+	.string "magst, können wir bald zusammen trainieren!$"
