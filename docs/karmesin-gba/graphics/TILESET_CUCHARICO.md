@@ -112,13 +112,18 @@ Datei: `graphics/tilesets/cucharico/tiles.png`
 
 - PNG mit indizierter 4bpp-Farbgebung und 16 Einträgen in der Palette
 - 128×128 Pixel, also ein Raster von 16×16 Grafik-Tiles à 8×8 Pixel
-- Enthält einen ersten Terrain-Farb- und Muster-Prototyp für Gras, Sand,
-  Wasser, Ufer, Wege/Felsen und Akzentfarben
-- Transparenz ist über den ersten Paletteneintrag vorgesehen
+- Enthält einen überarbeiteten, handgezeichneten Gen-3-inspirierten Atlas:
+  Grasvarianten, Sand, Wasser/Wellen, Ufer, Wege, Felsen, Vegetation,
+  Baumstammsegmente, Dach-/Wandfragmente sowie kleine Dekorationen
+- 16 Einträge in einer indizierten Palette; erster Eintrag transparent
+- Klare Pixelkanten ohne Glättung; die Kacheln sind als Grafik-Tiles
+  angelegt, noch nicht als fertige 16×16-Metatiles zusammengesetzt
 
-Dies ist ein **erster technischer Platzhalter-Prototyp**, kein fertiges
-Art-Pack: Die einzelnen Kachelmotive müssen visuell nachgearbeitet und
-in Porymap geprüft werden. Insbesondere sind noch keine Metatiles,
+Dies ist ein **verbesserter Grafik-Prototyp**, noch kein fertiges
+Art-Pack: Die Motive sind eine eigenständige Annäherung an den klassischen
+Gen-3-GBA-Pixelstil und keine kopierten Original-Emerald-Tiles. Die
+Kachelübergänge, Objektzusammensetzungen und Lesbarkeit müssen noch in
+Porymap geprüft und weiter verfeinert werden. Insbesondere sind noch keine Metatiles,
 Kollisionsattribute oder Engine-Registrierung vorhanden. Das Bild wurde
 als separate Quelldatei abgelegt und ersetzt keine bestehenden Tilesets.
 
@@ -126,7 +131,8 @@ als separate Quelldatei abgelegt und ersetzt keine bestehenden Tilesets.
 
 - [x] Stil- und Motivkonzept erstellt
 - [x] Engine-Verzeichnisstruktur anhand vorhandener Tilesets geprüft
-- [x] Erster indizierter 8×8-Grafik-Prototyp erstellt (Nacharbeit offen)
+- [x] Erster indizierter 8×8-Grafik-Prototyp erstellt
+- [x] Atlas im klassischen Gen-3-GBA-Stil überarbeitet (Nacharbeit offen)
 - [ ] GBA-Paletten erstellt und geprüft
 - [ ] Metatiles und Attribute erstellt
 - [ ] Tileset in der Engine registriert
