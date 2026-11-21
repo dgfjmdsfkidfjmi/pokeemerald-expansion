@@ -49,4 +49,4 @@ Eine Änderung gilt erst dann als spielbar, wenn die relevanten Daten generiert,
 
 ## Grafik – Cucharico
 
-Die Tileset-Spezifikation und Produktionsreihenfolge stehen in [TILESET_CUCHARICO.md](graphics/TILESET_CUCHARICO.md). Ein indizierter 128×136-Grafik-Atlas und erste Binärdateien liegen unter `data/tilesets/secondary/cucharico/`: 16 Metatiles (256 Byte), 16 Attribute (32 Byte) und Palette 06. Die oberen Ebenen verwenden eine transparente Leerkachel. Das Tileset ist noch nicht in C/Map-Layouts registriert; alle Attribute sind vorläufig normal/begehbar. Porymap-, Build- und Emulator-Test fehlen.
+Die Tileset-Spezifikation und Produktionsreihenfolge stehen in [TILESET_CUCHARICO.md](graphics/TILESET_CUCHARICO.md). Der indizierte 128×136-Grafik-Atlas, 16 Metatiles, 16 Attribute und alle 16 Palettenbänke liegen unter `data/tilesets/secondary/cucharico/`. Das Tileset ist in den Engine-Datendateien registriert und dem Cucharico-Layout zugewiesen. Die 32×18-Testkarte verwendet sekundäre Metatile-IDs ab 512 (General enthält 512 Metatiles). Alle Attribute sind vorläufig normal/begehbar. Porymap-, Build- und Emulator-Test fehlen.
