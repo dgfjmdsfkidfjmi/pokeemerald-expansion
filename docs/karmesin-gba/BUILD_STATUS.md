@@ -44,4 +44,4 @@ Eine Änderung gilt erst dann als spielbar, wenn die relevanten Daten generiert,
 
 ## Grafik – Cucharico
 
-Die Tileset-Spezifikation und Produktionsreihenfolge stehen in [TILESET_CUCHARICO.md](graphics/TILESET_CUCHARICO.md). Ein verbesserter, indizierter 128×128-Grafik-Atlas im Gen-3-inspirierten GBA-Stil liegt unter `graphics/tilesets/cucharico/tiles.png`. Er ist weiterhin ein Grafik-Prototyp: Metatiles, geprüfte Spielpaletten, Attribute, Engine-Registrierung und Porymap-Test fehlen.
+Die Tileset-Spezifikation und Produktionsreihenfolge stehen in [TILESET_CUCHARICO.md](graphics/TILESET_CUCHARICO.md). Ein indizierter 128×136-Grafik-Atlas und erste Binärdateien liegen unter `data/tilesets/secondary/cucharico/`: 16 Metatiles (256 Byte), 16 Attribute (32 Byte) und Palette 06. Die oberen Ebenen verwenden eine transparente Leerkachel. Das Tileset ist noch nicht in C/Map-Layouts registriert; alle Attribute sind vorläufig normal/begehbar. Porymap-, Build- und Emulator-Test fehlen.
