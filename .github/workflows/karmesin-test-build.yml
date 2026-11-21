@@ -6,6 +6,10 @@ on:
       - private-karmesin-gba
   workflow_dispatch:
 
+concurrency:
+  group: karmesin-gba-test-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
